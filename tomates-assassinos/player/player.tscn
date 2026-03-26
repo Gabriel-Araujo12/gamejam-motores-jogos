@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://db47s0bwgywar" path="res://assets/spritesheet.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://dq536mmgakgwj" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="PackedScene" uid="uid://bs0sp0ag2jgfr" path="res://weapons/meele_weapons/faca.tscn" id="3_g1dw6"]
-[ext_resource type="PackedScene" uid="uid://d0e6gitsumddf" path="res://weapons/meele_weapons/foice.tscn" id="4_yw30f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rkbax"]
 
@@ -27,11 +26,5 @@ editor_draw_drag_margin = true
 [node name="WeaponsManager" type="Node2D" parent="." unique_id=439646837]
 
 [node name="Weapon_1" type="Marker2D" parent="WeaponsManager" unique_id=2113246366]
-position = Vector2(-96, 0)
 
 [node name="Faca" parent="WeaponsManager/Weapon_1" unique_id=908162557 instance=ExtResource("3_g1dw6")]
-
-[node name="Weapon_2" type="Marker2D" parent="WeaponsManager" unique_id=2089244001]
-position = Vector2(96, 0)
-
-[node name="Foice" parent="WeaponsManager/Weapon_2" unique_id=1488393600 instance=ExtResource("4_yw30f")]

@@ -12,6 +12,9 @@ var _is_attacking: bool = false
 @export var _animation: AnimationPlayer
 @export var _detection_area: Area2D
 
+func _process(delta):
+	look_at(get_global_mouse_position())
+
 func _on_detection_area_body_entered(_body) -> void:
 	if _is_attacking:
 		return

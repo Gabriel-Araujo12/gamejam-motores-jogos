@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cr815etm3w1t0"]
+
+[ext_resource type="PackedScene" uid="uid://bx4fe8qjgyie0" path="res://weapons/weapon_template.tscn" id="1_ogr5a"]
+
+[node name="forcado" unique_id=908162557 instance=ExtResource("1_ogr5a")]
