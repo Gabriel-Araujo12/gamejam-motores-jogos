@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://vkrmm83b1rpc"]
+
+[ext_resource type="Script" uid="uid://ktnmpyak1pp5" path="res://enemies/enemy.gd" id="1_qw6q8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qw6q8"]
+radius = 7.3333335
+
+[node name="EnemyTemplate" type="CharacterBody2D" unique_id=1854716505 node_paths=PackedStringArray("_hitbox_area", "_invincibility_timer")]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_qw6q8")
+_hitbox_area = NodePath("HitboxArea")
+_invincibility_timer = NodePath("HitboxArea/InvincibilityTimer")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=514592039]
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=631293616]
+visible = false
+
+[node name="HitboxArea" type="Area2D" parent="." unique_id=1448917509]
+
+[node name="Collision" type="CollisionShape2D" parent="HitboxArea" unique_id=1869911010]
+shape = SubResource("CircleShape2D_qw6q8")
+
+[node name="InvincibilityTimer" type="Timer" parent="HitboxArea" unique_id=1167947132]
+one_shot = true
+
+[connection signal="body_entered" from="HitboxArea" to="." method="_on_hitbox_area_body_entered"]
+[connection signal="timeout" from="HitboxArea/InvincibilityTimer" to="." method="_on_invencibility_timer_timeout"]

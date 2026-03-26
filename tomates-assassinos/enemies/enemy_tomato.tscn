@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://da8h8d34v4dpk"]
+
+[ext_resource type="PackedScene" uid="uid://vkrmm83b1rpc" path="res://enemies/enemy_template.tscn" id="1_flald"]
+[ext_resource type="Texture2D" uid="uid://cfimu3qm8fu3p" path="res://assets/enemies/tomato_1.png" id="2_3ev8j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fauw"]
+atlas = ExtResource("2_3ev8j")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1af0c"]
+atlas = ExtResource("2_3ev8j")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4iqlk"]
+atlas = ExtResource("2_3ev8j")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hoe83"]
+atlas = ExtResource("2_3ev8j")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhagb"]
+atlas = ExtResource("2_3ev8j")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fafif"]
+atlas = ExtResource("2_3ev8j")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7dp2"]
+atlas = ExtResource("2_3ev8j")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i2vck"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fauw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1af0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4iqlk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hoe83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhagb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fafif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7dp2")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ntbau"]
+radius = 14.0
+height = 28.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6fauw"]
+radius = 14.0
+height = 28.0
+
+[node name="EnemyTomato" unique_id=1854716505 instance=ExtResource("1_flald")]
+scale = Vector2(1.5, 1.5)
+_move_speed = 160.0
+_health = 15
+_damage = 5
+
+[node name="AnimatedSprite" parent="." index="0" unique_id=514592039]
+sprite_frames = SubResource("SpriteFrames_i2vck")
+animation = &"run"
+
+[node name="Collision" parent="." index="1" unique_id=631293616]
+visible = true
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_ntbau")
+
+[node name="Collision" parent="HitboxArea" parent_id_path=PackedInt32Array(1448917509) index="0" unique_id=1869911010]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_6fauw")

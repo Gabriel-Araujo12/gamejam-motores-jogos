@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://6274q1x2i8go"]
+
+[ext_resource type="Texture2D" uid="uid://db47s0bwgywar" path="res://assets/spritesheet.png" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://dq536mmgakgwj" path="res://player/player.gd" id="1_rkbax"]
+[ext_resource type="PackedScene" uid="uid://bs0sp0ag2jgfr" path="res://weapons/meele_weapons/faca.tscn" id="3_g1dw6"]
+[ext_resource type="PackedScene" uid="uid://d0e6gitsumddf" path="res://weapons/meele_weapons/foice.tscn" id="4_yw30f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rkbax"]
+
+[node name="Player" type="CharacterBody2D" unique_id=541100644]
+script = ExtResource("1_rkbax")
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=1386766571]
+texture = ExtResource("1_oul6g")
+region_enabled = true
+region_rect = Rect2(0, 512, 64, 64)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1951158871]
+visible = false
+scale = Vector2(2.056325, 2.04212)
+shape = SubResource("CircleShape2D_rkbax")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=1509602924]
+position_smoothing_enabled = true
+editor_draw_drag_margin = true
+
+[node name="WeaponsManager" type="Node2D" parent="." unique_id=439646837]
+
+[node name="Weapon_1" type="Marker2D" parent="WeaponsManager" unique_id=2113246366]
+position = Vector2(-96, 0)
+
+[node name="Faca" parent="WeaponsManager/Weapon_1" unique_id=908162557 instance=ExtResource("3_g1dw6")]
+
+[node name="Weapon_2" type="Marker2D" parent="WeaponsManager" unique_id=2089244001]
+position = Vector2(96, 0)
+
+[node name="Foice" parent="WeaponsManager/Weapon_2" unique_id=1488393600 instance=ExtResource("4_yw30f")]

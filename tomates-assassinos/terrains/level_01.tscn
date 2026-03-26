@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dimahal13xfmd"]
+
+[ext_resource type="PackedScene" uid="uid://c44mcr8kmvefi" path="res://terrains/base_terrain.tscn" id="1_ftfk6"]
+
+[node name="Level_01" unique_id=198801959 instance=ExtResource("1_ftfk6")]
+layer_1/tile_data = PackedInt32Array(983044, 196608, 7, 262151, 196608, 7, 589837, 196608, 7, 917529, 196608, 7, 131098, 262144, 5, 983056, 262144, 5, 720922, 262144, 6, 393237, 262144, 6, 196623, 262144, 6, 655378, 262144, 6, 851976, 262144, 6, 458757, 262144, 6, 458781, 196608, 6, 131074, 196608, 6)

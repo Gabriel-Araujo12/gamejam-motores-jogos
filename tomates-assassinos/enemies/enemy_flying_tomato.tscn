@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://du1lxlb2uc2tx"]
+
+[ext_resource type="PackedScene" uid="uid://vkrmm83b1rpc" path="res://enemies/enemy_template.tscn" id="1_uyoot"]
+[ext_resource type="Texture2D" uid="uid://m374gfwugvq2" path="res://assets/enemies/tomato_2.png" id="2_gnafw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyoot"]
+atlas = ExtResource("2_gnafw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnafw"]
+atlas = ExtResource("2_gnafw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pb5m5"]
+atlas = ExtResource("2_gnafw")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf4te"]
+atlas = ExtResource("2_gnafw")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqm0i"]
+atlas = ExtResource("2_gnafw")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12wv6"]
+atlas = ExtResource("2_gnafw")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kc544"]
+atlas = ExtResource("2_gnafw")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k64d7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyoot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnafw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pb5m5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cf4te")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqm0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12wv6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kc544")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jw0k4"]
+radius = 7.0
+
+[node name="EnemyFlyingTomato" unique_id=1854716505 instance=ExtResource("1_uyoot")]
+scale = Vector2(1.5, 1.5)
+
+[node name="AnimatedSprite" parent="." index="0" unique_id=514592039]
+sprite_frames = SubResource("SpriteFrames_k64d7")
+animation = &"run"
+
+[node name="Collision" parent="." index="1" unique_id=631293616]
+visible = true
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_jw0k4")
+
+[node name="Collision" parent="HitboxArea" parent_id_path=PackedInt32Array(1448917509) index="0" unique_id=1869911010]
+position = Vector2(0, 2.6666667)
