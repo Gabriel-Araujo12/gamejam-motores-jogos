@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://eirkcmv2fsvl"]
+
+[node name="WaveSpot" type="Node2D" unique_id=1107986836]
+
+[node name="SpawnPosition_1" type="Marker2D" parent="." unique_id=670990518]
+position = Vector2(-101, 37)
+
+[node name="SpawnPosition_2" type="Marker2D" parent="." unique_id=917253288]
+position = Vector2(-51, -22)
+
+[node name="SpawnPosition_3" type="Marker2D" parent="." unique_id=2141839195]
+position = Vector2(92, -26)
+
+[node name="SpawnPosition_4" type="Marker2D" parent="." unique_id=251623927]
+position = Vector2(-82, -58)
+
+[node name="SpawnPosition_5" type="Marker2D" parent="." unique_id=1637710352]
+position = Vector2(-87, -6)
+
+[node name="SpawnPosition_6" type="Marker2D" parent="." unique_id=1988353928]
+position = Vector2(-23, 76)
+
+[node name="SpawnPosition_7" type="Marker2D" parent="." unique_id=1944341758]
+position = Vector2(21, -59)
+
+[node name="SpawnPosition_8" type="Marker2D" parent="." unique_id=569213722]
+position = Vector2(30, -22)
+
+[node name="SpawnPosition_9" type="Marker2D" parent="." unique_id=1618437723]
+position = Vector2(56, -50)
+
+[node name="SpawnPosition_10" type="Marker2D" parent="." unique_id=754849511]
+position = Vector2(20, 40)
+
+[node name="SpawnPosition_11" type="Marker2D" parent="." unique_id=935967836]
+position = Vector2(55, 14)
+
+[node name="SpawnPosition_12" type="Marker2D" parent="." unique_id=143422438]
+position = Vector2(76, 54)
+
+[node name="SpawnPosition_13" type="Marker2D" parent="." unique_id=117327696]
+position = Vector2(-56, 43)
+
+[node name="SpawnPosition_14" type="Marker2D" parent="." unique_id=1091266380]
+position = Vector2(-36, -82)
+
+[node name="SpawnPosition_15" type="Marker2D" parent="." unique_id=792096916]
+position = Vector2(90, -73)

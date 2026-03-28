@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://64ic7rkhgshd"]
+
+[ext_resource type="PackedScene" uid="uid://bx4fe8qjgyie0" path="res://weapons/weapon_template.tscn" id="1_jfilu"]
+[ext_resource type="Texture2D" uid="uid://cl3c0a7qwuawx" path="res://assets/weapons/revolver.png" id="2_jfilu"]
+
+[sub_resource type="Animation" id="Animation_1f67c"]
+resource_name = "attack"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_spawn_projectile_revolver"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tkax7"]
+_data = {
+&"attack": SubResource("Animation_1f67c")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1f67c"]
+radius = 224.0
+
+[node name="Revolver" unique_id=908162557 instance=ExtResource("1_jfilu")]
+_attack_damage = 10
+_attack_cooldown = 1.0
+
+[node name="WeaponTexture" parent="WeaponBody" parent_id_path=PackedInt32Array(1291365077) index="0" unique_id=519575831]
+position = Vector2(34, 0)
+texture = ExtResource("2_jfilu")
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Animation" parent="." index="1" unique_id=1821914207]
+libraries/ = SubResource("AnimationLibrary_tkax7")
+
+[node name="Collision" type="CollisionShape2D" parent="DetectionArea" parent_id_path=PackedInt32Array(51058909) index="0" unique_id=360027880]
+shape = SubResource("CircleShape2D_1f67c")

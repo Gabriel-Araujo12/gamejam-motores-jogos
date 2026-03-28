@@ -3,12 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://bx4fe8qjgyie0" path="res://weapons/weapon_template.tscn" id="1_5bicw"]
 [ext_resource type="Texture2D" uid="uid://y0l1cl1m2hl1" path="res://assets/weapons/foice.png" id="2_tvyo6"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvyo6"]
+size = Vector2(17.024965, 24.512203)
+
 [sub_resource type="Animation" id="Animation_tvyo6"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
+tracks/0/path = NodePath("WeaponBody:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -20,7 +23,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AttackArea/Collision:disabled")
+tracks/1/path = NodePath("WeaponBody/AttackArea/Collision:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -32,15 +35,15 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_hbeob"]
 resource_name = "attack"
-length = 0.6
+length = 0.75
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
+tracks/0/path = NodePath("WeaponBody:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0667, 0.6),
+"times": PackedFloat32Array(0, 0.2, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, -0.5235987755982988, 6.283185307179586]
@@ -48,11 +51,11 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AttackArea/Collision:disabled")
+tracks/1/path = NodePath("WeaponBody/AttackArea/Collision:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6),
+"times": PackedFloat32Array(0, 0.75),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -64,29 +67,27 @@ _data = {
 &"attack": SubResource("Animation_hbeob")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvyo6"]
-size = Vector2(17.024965, 24.512203)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_hbeob"]
 radius = 51.0
 
 [node name="Foice" unique_id=908162557 instance=ExtResource("1_5bicw")]
 _attack_damage = 5
-_attack_cooldown = 0.8
+_attack_cooldown = 0.75
 
-[node name="WeaponTexture" parent="." index="0" unique_id=519575831]
+[node name="WeaponTexture" parent="WeaponBody" parent_id_path=PackedInt32Array(1291365077) index="0" unique_id=519575831]
 position = Vector2(37, 0)
 rotation = 0.7853982
 texture = ExtResource("2_tvyo6")
 region_enabled = false
 
-[node name="Animation" parent="." index="1" unique_id=1821914207]
-libraries/ = SubResource("AnimationLibrary_wccuu")
-
-[node name="Collision" type="CollisionShape2D" parent="AttackArea" parent_id_path=PackedInt32Array(473488782) index="0" unique_id=2089747389]
+[node name="Collision" type="CollisionShape2D" parent="WeaponBody/AttackArea" parent_id_path=PackedInt32Array(473488782) index="0" unique_id=2089747389]
 position = Vector2(38.22836, 0.13493168)
 rotation = 2.0315633
 shape = SubResource("RectangleShape2D_tvyo6")
 
+[node name="Animation" parent="." index="1" unique_id=1821914207]
+libraries/ = SubResource("AnimationLibrary_wccuu")
+
 [node name="Collision" type="CollisionShape2D" parent="DetectionArea" parent_id_path=PackedInt32Array(51058909) index="0" unique_id=1184419719]
+visible = false
 shape = SubResource("CircleShape2D_hbeob")

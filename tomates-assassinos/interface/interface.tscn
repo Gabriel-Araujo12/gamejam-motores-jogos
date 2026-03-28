@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bnjxpho1s1pv7"]
+
+[ext_resource type="Script" uid="uid://djoo41ehekhwt" path="res://interface/interface.gd" id="1_0c05b"]
+[ext_resource type="FontFile" uid="uid://nsw8vx00xdp4" path="res://assets/interface/fonts/tinypixel.otf" id="1_6nxxo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0c05b"]
+font = ExtResource("1_6nxxo")
+font_size = 22
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0.6)
+shadow_offset = Vector2(2, 2)
+
+[node name="Interface" type="CanvasLayer" unique_id=752724292 node_paths=PackedStringArray("_wave_and_time")]
+script = ExtResource("1_0c05b")
+_wave_and_time = NodePath("WaveAndTime")
+
+[node name="WaveAndTime" type="Label" parent="." unique_id=1924257373]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.0
+offset_top = 24.0
+offset_right = 112.0
+offset_bottom = 65.0
+grow_horizontal = 2
+text = "ONDA 7
+TEMPO RESTANTE - 00:30"
+label_settings = SubResource("LabelSettings_0c05b")
+horizontal_alignment = 1
+vertical_alignment = 1

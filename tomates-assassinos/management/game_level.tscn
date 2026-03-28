@@ -2,20 +2,53 @@
 
 [ext_resource type="PackedScene" uid="uid://dimahal13xfmd" path="res://terrains/level_01.tscn" id="1_cp3vr"]
 [ext_resource type="PackedScene" uid="uid://6274q1x2i8go" path="res://player/player.tscn" id="2_fyo3i"]
-[ext_resource type="PackedScene" uid="uid://da8h8d34v4dpk" path="res://enemies/enemy_tomato.tscn" id="3_fyo3i"]
-[ext_resource type="PackedScene" uid="uid://du1lxlb2uc2tx" path="res://enemies/enemy_flying_tomato.tscn" id="4_sktj0"]
+[ext_resource type="Script" uid="uid://dnkv3h034emq" path="res://management/wave_manager.gd" id="3_sktj0"]
+[ext_resource type="PackedScene" uid="uid://eirkcmv2fsvl" path="res://management/wave_spot.tscn" id="5_a0j3u"]
+[ext_resource type="PackedScene" uid="uid://bnjxpho1s1pv7" path="res://interface/interface.tscn" id="5_ocy5h"]
 
 [node name="GameLevel" type="Node2D" unique_id=1870587913]
 
 [node name="Level_01" parent="." unique_id=198801959 instance=ExtResource("1_cp3vr")]
 
 [node name="Player" parent="." unique_id=541100644 instance=ExtResource("2_fyo3i")]
-position = Vector2(1013, 538)
-_health = null
-_move_speed = null
+position = Vector2(975, 540)
 
-[node name="EnemyTomato" parent="." unique_id=1854716505 instance=ExtResource("3_fyo3i")]
-position = Vector2(754, 436)
+[node name="WaveManager" type="Node2D" parent="." unique_id=417954880 node_paths=PackedStringArray("_wave_timer", "_wave_spawner_timer", "_interface", "_player")]
+script = ExtResource("3_sktj0")
+_wave_timer = NodePath("WaveTimer")
+_wave_spawner_timer = NodePath("WaveSpawnCooldown")
+_interface = NodePath("../Interface")
+_player = NodePath("../Player")
 
-[node name="EnemyFlyingTomato" parent="." unique_id=1800183349 instance=ExtResource("4_sktj0")]
-position = Vector2(1132, 366)
+[node name="WaveSpot_1" parent="WaveManager" unique_id=1107986836 instance=ExtResource("5_a0j3u")]
+position = Vector2(223, 328)
+
+[node name="WaveSpot_2" parent="WaveManager" unique_id=1067359434 instance=ExtResource("5_a0j3u")]
+position = Vector2(427, 931)
+
+[node name="WaveSpot_3" parent="WaveManager" unique_id=1606618103 instance=ExtResource("5_a0j3u")]
+position = Vector2(717, 201)
+
+[node name="WaveSpot_4" parent="WaveManager" unique_id=894984761 instance=ExtResource("5_a0j3u")]
+position = Vector2(860, 791)
+
+[node name="WaveSpot_5" parent="WaveManager" unique_id=1313963266 instance=ExtResource("5_a0j3u")]
+position = Vector2(1409, 261)
+
+[node name="WaveSpot_6" parent="WaveManager" unique_id=1085084635 instance=ExtResource("5_a0j3u")]
+position = Vector2(1726, 817)
+
+[node name="WaveTimer" type="Timer" parent="WaveManager" unique_id=1493125143]
+one_shot = true
+
+[node name="WaveSpawnCooldown" type="Timer" parent="WaveManager" unique_id=1743738870]
+one_shot = true
+
+[node name="CurrentTimeTimer" type="Timer" parent="WaveManager" unique_id=360524129]
+autostart = true
+
+[node name="Interface" parent="." unique_id=752724292 instance=ExtResource("5_ocy5h")]
+
+[connection signal="timeout" from="WaveManager/WaveTimer" to="WaveManager" method="_on_wave_timer_timeout"]
+[connection signal="timeout" from="WaveManager/WaveSpawnCooldown" to="WaveManager" method="_on_wave_spawn_cooldown_timeout"]
+[connection signal="timeout" from="WaveManager/CurrentTimeTimer" to="WaveManager" method="_on_current_time_timer_timeout"]

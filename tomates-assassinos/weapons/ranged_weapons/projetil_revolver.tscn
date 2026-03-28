@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://qefu2wx7v00d"]
+
+[ext_resource type="Script" uid="uid://b235aqt3ds0xh" path="res://weapons/ranged_weapons/projetil_revolver.gd" id="1_6lrfj"]
+[ext_resource type="Texture2D" uid="uid://cl3c0a7qwuawx" path="res://assets/weapons/revolver.png" id="2_txekp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0aht0"]
+radius = 7.0
+
+[node name="ProjetilRevolver" type="Area2D" unique_id=682074854]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_6lrfj")
+_move_speed = 512.0
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=660507742]
+texture = ExtResource("2_txekp")
+region_enabled = true
+region_rect = Rect2(32, 0, 32, 32)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=316506295]
+position = Vector2(0, 0.5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_0aht0")
+
+[connection signal="body_entered" from="." to="." method="_on_attack_area_body_entered"]

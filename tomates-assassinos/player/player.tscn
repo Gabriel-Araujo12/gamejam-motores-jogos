@@ -1,25 +1,98 @@
 [gd_scene format=3 uid="uid://6274q1x2i8go"]
 
-[ext_resource type="Texture2D" uid="uid://db47s0bwgywar" path="res://assets/spritesheet.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://dq536mmgakgwj" path="res://player/player.gd" id="1_rkbax"]
-[ext_resource type="PackedScene" uid="uid://bs0sp0ag2jgfr" path="res://weapons/meele_weapons/faca.tscn" id="3_g1dw6"]
+[ext_resource type="Texture2D" uid="uid://b0twvaonx36tb" path="res://assets/player/player.png" id="2_g1dw6"]
+[ext_resource type="PackedScene" uid="uid://bxyb2qgp283hw" path="res://weapons/ranged_weapons/escopeta.tscn" id="3_g1dw6"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rkbax"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yw30f"]
+atlas = ExtResource("2_g1dw6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjkh3"]
+atlas = ExtResource("2_g1dw6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6k8r"]
+atlas = ExtResource("2_g1dw6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_boad6"]
+atlas = ExtResource("2_g1dw6")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgyib"]
+atlas = ExtResource("2_g1dw6")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg6s5"]
+atlas = ExtResource("2_g1dw6")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8t03j"]
+atlas = ExtResource("2_g1dw6")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ieo8"]
+atlas = ExtResource("2_g1dw6")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ebec5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yw30f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjkh3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6k8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_boad6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgyib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hg6s5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8t03j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ieo8")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yllr7"]
+radius = 3.4041314
+height = 18.608114
 
 [node name="Player" type="CharacterBody2D" unique_id=541100644]
 script = ExtResource("1_rkbax")
 
-[node name="Texture" type="Sprite2D" parent="." unique_id=1386766571]
-texture = ExtResource("1_oul6g")
-region_enabled = true
-region_rect = Rect2(0, 512, 64, 64)
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=1167032844]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_ebec5")
+animation = &"idle"
+frame_progress = 0.35425615
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1951158871]
-visible = false
+position = Vector2(0, 0.9999999)
 scale = Vector2(2.056325, 2.04212)
-shape = SubResource("CircleShape2D_rkbax")
+shape = SubResource("CapsuleShape2D_yllr7")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1509602924]
+zoom = Vector2(1.2, 1.2)
 position_smoothing_enabled = true
 editor_draw_drag_margin = true
 
@@ -27,4 +100,4 @@ editor_draw_drag_margin = true
 
 [node name="Weapon_1" type="Marker2D" parent="WeaponsManager" unique_id=2113246366]
 
-[node name="Faca" parent="WeaponsManager/Weapon_1" unique_id=908162557 instance=ExtResource("3_g1dw6")]
+[node name="Escopeta" parent="WeaponsManager/Weapon_1" unique_id=908162557 instance=ExtResource("3_g1dw6")]

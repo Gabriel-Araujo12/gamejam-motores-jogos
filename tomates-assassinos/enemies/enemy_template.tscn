@@ -5,25 +5,45 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_qw6q8"]
 radius = 7.3333335
 
-[node name="EnemyTemplate" type="CharacterBody2D" unique_id=1854716505 node_paths=PackedStringArray("_hitbox_area", "_invincibility_timer")]
+[sub_resource type="CircleShape2D" id="CircleShape2D_m45cj"]
+radius = 96.0
+
+[node name="EnemyTemplate" type="CharacterBody2D" unique_id=1854716505 node_paths=PackedStringArray("_hitbox_area", "_invincibility_timer", "_dash_wait_timer", "_dash_timer")]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_qw6q8")
 _hitbox_area = NodePath("HitboxArea")
 _invincibility_timer = NodePath("HitboxArea/InvincibilityTimer")
+_dash_wait_timer = NodePath("DashWaitTime")
+_dash_timer = NodePath("DashTimer")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=514592039]
 
-[node name="Collision" type="CollisionShape2D" parent="." unique_id=631293616]
+[node name="MainCollision" type="CollisionShape2D" parent="." unique_id=631293616]
 visible = false
 
 [node name="HitboxArea" type="Area2D" parent="." unique_id=1448917509]
 
-[node name="Collision" type="CollisionShape2D" parent="HitboxArea" unique_id=1869911010]
+[node name="HitboxCollision" type="CollisionShape2D" parent="HitboxArea" unique_id=1869911010]
 shape = SubResource("CircleShape2D_qw6q8")
 
 [node name="InvincibilityTimer" type="Timer" parent="HitboxArea" unique_id=1167947132]
 one_shot = true
 
+[node name="RangeArea" type="Area2D" parent="." unique_id=1812684603]
+
+[node name="Collision" type="CollisionShape2D" parent="RangeArea" unique_id=2000807597]
+shape = SubResource("CircleShape2D_m45cj")
+
+[node name="DashWaitTime" type="Timer" parent="." unique_id=2082582616]
+one_shot = true
+
+[node name="DashTimer" type="Timer" parent="." unique_id=1023843194]
+wait_time = 0.4
+one_shot = true
+
 [connection signal="body_entered" from="HitboxArea" to="." method="_on_hitbox_area_body_entered"]
 [connection signal="timeout" from="HitboxArea/InvincibilityTimer" to="." method="_on_invencibility_timer_timeout"]
+[connection signal="body_entered" from="RangeArea" to="." method="_on_range_area_body_entered"]
+[connection signal="timeout" from="DashWaitTime" to="." method="_on_dash_wait_time_timeout"]
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
