@@ -19,7 +19,7 @@ var _waves_dict: Dictionary = {
 		"wave_amount": 1,
 		"wave_spawn_cooldown": 4,
 		"spots_amount": [3, 6],
-		"wave_difficulty": "easy"
+		"wave_difficulty": "easy to medium"
 	},
 	
 	3: {
@@ -27,7 +27,7 @@ var _waves_dict: Dictionary = {
 		"wave_amount": 1,
 		"wave_spawn_cooldown": 4,
 		"spots_amount": [3, 6],
-		"wave_difficulty": "easy"
+		"wave_difficulty": "medium"
 	},
 	
 	4: {
@@ -35,7 +35,7 @@ var _waves_dict: Dictionary = {
 		"wave_amount": 1,
 		"wave_spawn_cooldown": 4,
 		"spots_amount": [3, 6],
-		"wave_difficulty": "easy"
+		"wave_difficulty": "medium to hard"
 	},
 	
 	5: {
@@ -43,14 +43,14 @@ var _waves_dict: Dictionary = {
 		"wave_amount": 1,
 		"wave_spawn_cooldown": 4,
 		"spots_amount": [3, 6],
-		"wave_difficulty": "easy"
+		"wave_difficulty": "hard"
 	}
 }
 
 var _current_wave: int = 1
 
 @export_category("Variables")
-@export var _initial_position: Vector2 = Vector2(975, 540)
+@export var _initial_position: Vector2 = Vector2(573, 350)
 
 @export_category("Objects")
 @export var _wave_timer: Timer
@@ -130,7 +130,7 @@ func _spawn_enemy(_spawner: Node2D) -> void:
 				_enemy = _ENEMY_FLYING_TOMATO.instantiate()
 		
 		"medium":
-			pass
+			_enemy = _ENEMY_DASH_TOMATO.instantiate()
 		
 		"medium to hard":
 			pass

@@ -9,6 +9,7 @@ var _is_attacking: bool = false
 var _enemy_ref: Enemy
 
 @export_category("Variables")
+@export var _attack_type: String = "melee"
 @export var _attack_damage: int
 @export var _attack_cooldown: float
 
@@ -21,11 +22,16 @@ func _process(_delta):
 	if is_instance_valid(_enemy_ref):
 		look_at(_enemy_ref.global_position)
 		
-		var angle = wrapf(global_rotation, -PI, PI)
-		if abs(angle) > PI / 2:
-			sprite.flip_v = true
+		if _attack_type == "melee":
+			return
+		
 		else:
-			sprite.flip_v = false
+			var angle = wrapf(global_rotation, -PI, PI)
+			if abs(angle) > PI / 2:
+				sprite.flip_v = true
+			else:
+				sprite.flip_v = false
+	
 	else:
 		pass
 
@@ -37,14 +43,12 @@ func _on_detection_area_body_entered(_body) -> void:
 		_enemy_ref = _body
 		_detection_area.set_deferred("monitoring", false)
 		_attack_timer.start(_attack_cooldown)
-		_animation.play("attack")
+		_animation.call_deferred("play", "attack")
 		_is_attacking = true
-
 
 func _on_attack_timer_timeout() -> void:
 	_detection_area.set_deferred("monitoring", true)
 	_is_attacking = false
-
 
 func _on_attack_area_body_entered(_body) -> void:
 	if _body is Enemy:

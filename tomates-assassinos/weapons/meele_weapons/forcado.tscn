@@ -36,7 +36,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_4dxay"]
 resource_name = "attack"
-length = 0.35
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -44,7 +44,7 @@ tracks/0/path = NodePath("WeaponBody:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.08, 0.28, 0.35),
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(-15, 0), Vector2(10, 0), Vector2(0, 0)]
@@ -56,7 +56,7 @@ tracks/1/path = NodePath("WeaponBody/AttackArea/Collision:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.35),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -72,16 +72,20 @@ _data = {
 radius = 61.204575
 
 [node name="Forcado" unique_id=908162557 instance=ExtResource("1_ogr5a")]
-_attack_damage = 7
-_attack_cooldown = 0.35
+_attack_damage = 8
+_attack_cooldown = 0.8
 
 [node name="WeaponTexture" parent="WeaponBody" parent_id_path=PackedInt32Array(1291365077) index="0" unique_id=519575831]
-position = Vector2(39.000004, 0)
+position = Vector2(30.999998, 0)
 rotation = 0.7853982
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_f162p")
 region_enabled = false
 
-[node name="Collision" type="CollisionShape2D" parent="WeaponBody/AttackArea" parent_id_path=PackedInt32Array(473488782) index="0" unique_id=688816989]
+[node name="AttackArea" parent="WeaponBody" parent_id_path=PackedInt32Array(1291365077) index="1" unique_id=473488782]
+visible = false
+
+[node name="Collision" type="CollisionShape2D" parent="WeaponBody/AttackArea" index="0" unique_id=688816989]
 position = Vector2(51, 0)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_f162p")
@@ -89,6 +93,8 @@ shape = SubResource("CapsuleShape2D_f162p")
 [node name="Animation" parent="." index="1" unique_id=1821914207]
 libraries/ = SubResource("AnimationLibrary_lrmwv")
 
-[node name="Collision" type="CollisionShape2D" parent="DetectionArea" parent_id_path=PackedInt32Array(51058909) index="0" unique_id=1675310933]
+[node name="DetectionArea" parent="." index="2" unique_id=51058909]
 visible = false
+
+[node name="Collision" type="CollisionShape2D" parent="DetectionArea" index="0" unique_id=1675310933]
 shape = SubResource("CircleShape2D_qh223")

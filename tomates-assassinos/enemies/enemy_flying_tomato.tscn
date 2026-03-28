@@ -149,7 +149,9 @@ _data = {
 radius = 7.0
 
 [node name="EnemyFlyingTomato" unique_id=1854716505 instance=ExtResource("1_uyoot")]
-scale = Vector2(1.5, 1.5)
+_move_speed = 180.0
+_health = 8
+_damage = 4
 
 [node name="AnimatedSprite" parent="." index="0" unique_id=514592039]
 sprite_frames = SubResource("SpriteFrames_k64d7")

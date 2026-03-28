@@ -213,8 +213,9 @@ radius = 13.0
 radius = 13.0
 
 [node name="EnemyDashTomato" unique_id=1854716505 instance=ExtResource("1_pxyqw")]
-scale = Vector2(1.5, 1.5)
 _enemy_type = "chase_and_dash"
+_move_speed = 150.0
+_damage = 6
 
 [node name="AnimatedSprite" parent="." index="0" unique_id=514592039]
 sprite_frames = SubResource("SpriteFrames_p6bfh")
@@ -234,3 +235,6 @@ visible = false
 position = Vector2(0, 1)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_pwce1")
+
+[node name="RangeArea" parent="." index="3" unique_id=1812684603]
+visible = false

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dq536mmgakgwj" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://b0twvaonx36tb" path="res://assets/player/player.png" id="2_g1dw6"]
-[ext_resource type="PackedScene" uid="uid://bxyb2qgp283hw" path="res://weapons/ranged_weapons/escopeta.tscn" id="3_g1dw6"]
+[ext_resource type="PackedScene" uid="uid://64ic7rkhgshd" path="res://weapons/ranged_weapons/revolver.tscn" id="3_g1dw6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yw30f"]
 atlas = ExtResource("2_g1dw6")
@@ -79,9 +79,9 @@ height = 18.608114
 
 [node name="Player" type="CharacterBody2D" unique_id=541100644]
 script = ExtResource("1_rkbax")
+_move_speed = 192.0
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=1167032844]
-scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_ebec5")
 animation = &"idle"
 frame_progress = 0.35425615
@@ -92,7 +92,7 @@ scale = Vector2(2.056325, 2.04212)
 shape = SubResource("CapsuleShape2D_yllr7")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1509602924]
-zoom = Vector2(1.2, 1.2)
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 editor_draw_drag_margin = true
 
@@ -100,4 +100,4 @@ editor_draw_drag_margin = true
 
 [node name="Weapon_1" type="Marker2D" parent="WeaponsManager" unique_id=2113246366]
 
-[node name="Escopeta" parent="WeaponsManager/Weapon_1" unique_id=908162557 instance=ExtResource("3_g1dw6")]
+[node name="Revolver" parent="WeaponsManager/Weapon_1" unique_id=908162557 instance=ExtResource("3_g1dw6")]

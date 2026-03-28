@@ -153,13 +153,10 @@ height = 28.0
 radius = 14.0
 height = 28.0
 
-[node name="EnemyTomato" unique_id=1854716505 node_paths=PackedStringArray("_dash_wait_timer") instance=ExtResource("1_flald")]
-scale = Vector2(1.5, 1.5)
-_enemy_type = "chase"
-_move_speed = 160.0
-_health = 15
-_damage = 5
-_dash_wait_timer = NodePath("")
+[node name="EnemyTomato" unique_id=1854716505 instance=ExtResource("1_flald")]
+_move_speed = 120.0
+_health = 12
+_damage = 6
 
 [node name="AnimatedSprite" parent="." index="0" unique_id=514592039]
 sprite_frames = SubResource("SpriteFrames_i2vck")

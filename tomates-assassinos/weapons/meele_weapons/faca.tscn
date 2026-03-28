@@ -30,7 +30,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_w4a04"]
@@ -71,25 +71,31 @@ _data = {
 radius = 54.00926
 
 [node name="Faca" unique_id=908162557 instance=ExtResource("1_s7vyj")]
-_attack_damage = 3
-_attack_cooldown = 0.4
+_attack_damage = 4
+_attack_cooldown = 0.6
 
 [node name="WeaponTexture" parent="WeaponBody" parent_id_path=PackedInt32Array(1291365077) index="0" unique_id=519575831]
-position = Vector2(21.000002, 14.000002)
+position = Vector2(30.999998, 0)
 rotation = 0.7853982
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_nsnxy")
-offset = Vector2(0, -20)
 region_enabled = false
 region_rect = Rect2(0, 576, 64, 64)
 
-[node name="Collision" type="CollisionShape2D" parent="WeaponBody/AttackArea" parent_id_path=PackedInt32Array(473488782) index="0" unique_id=2518309]
+[node name="AttackArea" parent="WeaponBody" parent_id_path=PackedInt32Array(1291365077) index="1" unique_id=473488782]
+visible = false
+
+[node name="Collision" type="CollisionShape2D" parent="WeaponBody/AttackArea" index="0" unique_id=2518309]
 position = Vector2(38, 2)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_qd6u2")
+disabled = true
 
 [node name="Animation" parent="." index="1" unique_id=1821914207]
 libraries/ = SubResource("AnimationLibrary_checc")
 
-[node name="Collision" type="CollisionShape2D" parent="DetectionArea" parent_id_path=PackedInt32Array(51058909) index="0" unique_id=803151562]
+[node name="DetectionArea" parent="." index="2" unique_id=51058909]
 visible = false
+
+[node name="Collision" type="CollisionShape2D" parent="DetectionArea" index="0" unique_id=803151562]
 shape = SubResource("CircleShape2D_6i2cx")

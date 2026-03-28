@@ -11,7 +11,7 @@
 [node name="Level_01" parent="." unique_id=198801959 instance=ExtResource("1_cp3vr")]
 
 [node name="Player" parent="." unique_id=541100644 instance=ExtResource("2_fyo3i")]
-position = Vector2(975, 540)
+position = Vector2(573, 350)
 
 [node name="WaveManager" type="Node2D" parent="." unique_id=417954880 node_paths=PackedStringArray("_wave_timer", "_wave_spawner_timer", "_interface", "_player")]
 script = ExtResource("3_sktj0")
@@ -21,22 +21,22 @@ _interface = NodePath("../Interface")
 _player = NodePath("../Player")
 
 [node name="WaveSpot_1" parent="WaveManager" unique_id=1107986836 instance=ExtResource("5_a0j3u")]
-position = Vector2(223, 328)
+position = Vector2(166, 206)
 
 [node name="WaveSpot_2" parent="WaveManager" unique_id=1067359434 instance=ExtResource("5_a0j3u")]
-position = Vector2(427, 931)
+position = Vector2(248, 560)
 
 [node name="WaveSpot_3" parent="WaveManager" unique_id=1606618103 instance=ExtResource("5_a0j3u")]
-position = Vector2(717, 201)
+position = Vector2(925, 145)
 
 [node name="WaveSpot_4" parent="WaveManager" unique_id=894984761 instance=ExtResource("5_a0j3u")]
-position = Vector2(860, 791)
+position = Vector2(988, 453)
 
 [node name="WaveSpot_5" parent="WaveManager" unique_id=1313963266 instance=ExtResource("5_a0j3u")]
-position = Vector2(1409, 261)
+position = Vector2(551, 144)
 
 [node name="WaveSpot_6" parent="WaveManager" unique_id=1085084635 instance=ExtResource("5_a0j3u")]
-position = Vector2(1726, 817)
+position = Vector2(668, 575)
 
 [node name="WaveTimer" type="Timer" parent="WaveManager" unique_id=1493125143]
 one_shot = true

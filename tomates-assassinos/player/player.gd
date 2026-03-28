@@ -6,7 +6,7 @@ class_name Player
 var _max_health: int
 
 @export_category("Variables")
-@export var _health: int = 25
+@export var _health: int = 30
 @export var _move_speed: float = 256.0
 
 func _ready() -> void:

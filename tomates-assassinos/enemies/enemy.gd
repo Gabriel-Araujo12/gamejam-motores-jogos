@@ -63,6 +63,7 @@ func _chase_and_dash(_direction: Vector2) -> void:
 
 func update_health(_value: int) -> void:
 	_health -= _value
+	_spawn_text_popup(_value)
 	
 	if _health <= 0:
 		set_physics_process(false)
@@ -74,7 +75,6 @@ func update_health(_value: int) -> void:
 		queue_free()
 		
 	animation.play("hit")
-	_spawn_text_popup(_value)
 
 func _spawn_text_popup(_value: int) -> void:
 	var _popup: TextPopup = _TEXT_POPUP.instantiate()
