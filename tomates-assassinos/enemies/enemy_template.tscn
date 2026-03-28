@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ktnmpyak1pp5" path="res://enemies/enemy.gd" id="1_qw6q8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qw6q8"]
-radius = 7.3333335
+radius = 28.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m45cj"]
 radius = 96.0
@@ -23,6 +23,7 @@ _dash_timer = NodePath("DashTimer")
 visible = false
 
 [node name="HitboxArea" type="Area2D" parent="." unique_id=1448917509]
+visible = false
 
 [node name="HitboxCollision" type="CollisionShape2D" parent="HitboxArea" unique_id=1869911010]
 shape = SubResource("CircleShape2D_qw6q8")
@@ -31,6 +32,7 @@ shape = SubResource("CircleShape2D_qw6q8")
 one_shot = true
 
 [node name="RangeArea" type="Area2D" parent="." unique_id=1812684603]
+visible = false
 
 [node name="Collision" type="CollisionShape2D" parent="RangeArea" unique_id=2000807597]
 shape = SubResource("CircleShape2D_m45cj")

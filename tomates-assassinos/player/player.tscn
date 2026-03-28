@@ -92,7 +92,7 @@ scale = Vector2(2.056325, 2.04212)
 shape = SubResource("CapsuleShape2D_yllr7")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=1509602924]
-zoom = Vector2(2, 2)
+zoom = Vector2(2.2, 2.2)
 position_smoothing_enabled = true
 editor_draw_drag_margin = true
 

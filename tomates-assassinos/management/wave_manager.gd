@@ -130,8 +130,15 @@ func _spawn_enemy(_spawner: Node2D) -> void:
 				_enemy = _ENEMY_FLYING_TOMATO.instantiate()
 		
 		"medium":
-			_enemy = _ENEMY_DASH_TOMATO.instantiate()
-		
+			if _randf <= 0.7:
+				_enemy = _ENEMY_TOMATO.instantiate()
+			
+			elif _randf <= 0.7:
+				pass
+			
+			else:
+				_enemy = _ENEMY_FLYING_TOMATO.instantiate()
+	
 		"medium to hard":
 			pass
 		

@@ -177,6 +177,3 @@ shape = SubResource("CapsuleShape2D_6fauw")
 
 [node name="RangeArea" parent="." index="3" unique_id=1812684603]
 visible = false
-
-[node name="Collision" parent="RangeArea" index="0" unique_id=2000807597]
-visible = false

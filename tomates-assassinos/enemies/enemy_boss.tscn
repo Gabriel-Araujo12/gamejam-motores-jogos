@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://drtqwglq1t2ob"]
+
+[ext_resource type="PackedScene" uid="uid://vkrmm83b1rpc" path="res://enemies/enemy_template.tscn" id="1_yxpds"]
+[ext_resource type="Texture2D" uid="uid://buqcqnybwpdhg" path="res://assets/enemies/tomato_boss.png" id="2_8fsp4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6415"]
+atlas = ExtResource("2_8fsp4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtliv"]
+atlas = ExtResource("2_8fsp4")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bdce"]
+atlas = ExtResource("2_8fsp4")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l0jq"]
+atlas = ExtResource("2_8fsp4")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00ai1"]
+atlas = ExtResource("2_8fsp4")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlot5"]
+atlas = ExtResource("2_8fsp4")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iu5ta"]
+atlas = ExtResource("2_8fsp4")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fbuyp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6415")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtliv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bdce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2l0jq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00ai1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlot5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iu5ta")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_1af0c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4iqlk"]
+resource_name = "hit"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(18.892157, 18.892157, 18.892157, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yxpds"]
+_data = {
+&"RESET": SubResource("Animation_1af0c"),
+&"hit": SubResource("Animation_4iqlk")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yxpds"]
+radius = 22.0
+height = 58.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8fsp4"]
+radius = 22.0
+height = 58.0
+
+[node name="EnemyBoss" unique_id=1854716505 instance=ExtResource("1_yxpds")]
+_move_speed = 120.0
+_health = 60
+_damage = 12
+
+[node name="AnimatedSprite" parent="." index="0" unique_id=514592039]
+sprite_frames = SubResource("SpriteFrames_fbuyp")
+frame_progress = 0.93308103
+
+[node name="Animation" type="AnimationPlayer" parent="AnimatedSprite" index="0" unique_id=963440065]
+libraries/ = SubResource("AnimationLibrary_yxpds")
+
+[node name="MainCollision" parent="." index="1" unique_id=631293616]
+position = Vector2(0, 4)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_yxpds")
+
+[node name="HitboxCollision" parent="HitboxArea" parent_id_path=PackedInt32Array(1448917509) index="0" unique_id=1869911010]
+position = Vector2(0, 4)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_8fsp4")
