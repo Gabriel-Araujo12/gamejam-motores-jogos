@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyndhoa0vi11y"
-path="res://.godot/imported/tomato_3.png-5861b98c02a99d85dfa2df2f38c5fb42.ctex"
+uid="uid://d26eyp8nh53uv"
+path="res://.godot/imported/tronco_1.png-06a9b981fb70559018a9918ea779d69d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemies/tomato_3.png"
-dest_files=["res://.godot/imported/tomato_3.png-5861b98c02a99d85dfa2df2f38c5fb42.ctex"]
+source_file="res://assets/map/tronco_1.png"
+dest_files=["res://.godot/imported/tronco_1.png-06a9b981fb70559018a9918ea779d69d.ctex"]
 
 [params]
 

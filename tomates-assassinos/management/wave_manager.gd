@@ -4,13 +4,15 @@ class_name WaveManager
 const _ENEMY_TOMATO: PackedScene = preload("res://enemies/enemy_tomato.tscn")
 const _ENEMY_FLYING_TOMATO: PackedScene = preload("res://enemies/enemy_flying_tomato.tscn")
 const _ENEMY_DASH_TOMATO: PackedScene = preload("res://enemies/enemy_dash_tomato.tscn")
+const _ENEMY_RANGED_TOMATO: PackedScene = preload("res://enemies/enemy_ranged_tomato.tscn")
+const _ENEMY_BOSS_TOMATO: PackedScene = preload("res://enemies/enemy_boss.tscn")
 
 var _waves_dict: Dictionary = {
 	1: {
 		"wave_time": 20,
 		"wave_amount": 1,
-		"wave_spawn_cooldown": 4,
-		"spots_amount": [3, 6],
+		"wave_spawn_cooldown": 10,
+		"spots_amount": [1, 1],
 		"wave_difficulty": "easy"
 	},
 	
@@ -120,7 +122,7 @@ func _spawn_enemy(_spawner: Node2D) -> void:
 	
 	match _difficulty:
 		"easy":
-			_enemy = _ENEMY_TOMATO.instantiate()
+			_enemy = _ENEMY_BOSS_TOMATO.instantiate()
 		
 		"easy to medium":
 			if _randf <= 0.7:

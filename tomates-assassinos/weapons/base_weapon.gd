@@ -1,10 +1,11 @@
 extends Node2D
 class_name BaseWeapon
 
-@onready var sprite = $WeaponBody/WeaponTexture
-
 const _PROJECTILE_REVOLVER: PackedScene = preload("res://weapons/ranged_weapons/projetil_revolver.tscn")
 const _PROJECTILE_ESCOPETA: PackedScene = preload("res://weapons/ranged_weapons/projetil_escopeta.tscn")
+
+@onready var sprite = $WeaponBody/WeaponTexture
+
 var _is_attacking: bool = false
 var _enemy_ref: Enemy
 

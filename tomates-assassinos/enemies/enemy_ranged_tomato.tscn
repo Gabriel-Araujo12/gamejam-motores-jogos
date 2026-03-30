@@ -1,5 +1,222 @@
 [gd_scene format=3 uid="uid://cuwu843xjrdao"]
 
 [ext_resource type="PackedScene" uid="uid://vkrmm83b1rpc" path="res://enemies/enemy_template.tscn" id="1_wo52u"]
+[ext_resource type="Texture2D" uid="uid://2prh5l1y7vrm" path="res://assets/enemies/tomato_death.png" id="2_ygnqs"]
+[ext_resource type="Texture2D" uid="uid://cskevj1d6s5mo" path="res://assets/enemies/tomato_4.png" id="3_akqn8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gs24"]
+atlas = ExtResource("2_ygnqs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcdbi"]
+atlas = ExtResource("2_ygnqs")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_damun"]
+atlas = ExtResource("2_ygnqs")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyknx"]
+atlas = ExtResource("2_ygnqs")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg20h"]
+atlas = ExtResource("2_ygnqs")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfnuu"]
+atlas = ExtResource("2_ygnqs")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o50o6"]
+atlas = ExtResource("3_akqn8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xb7fn"]
+atlas = ExtResource("3_akqn8")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5yq0"]
+atlas = ExtResource("3_akqn8")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xo1j"]
+atlas = ExtResource("3_akqn8")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nhb1"]
+atlas = ExtResource("3_akqn8")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oxymc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gs24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcdbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_damun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyknx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pg20h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfnuu")
+}],
+"loop": false,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o50o6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xb7fn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5yq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xo1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4nhb1")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_1af0c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HitboxArea:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_4iqlk"]
+resource_name = "hit"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(18.892157, 18.892157, 18.892157, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ygnqs"]
+resource_name = "spawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_spawn_finished"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HitboxArea:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xa5m5"]
+_data = {
+&"RESET": SubResource("Animation_1af0c"),
+&"hit": SubResource("Animation_4iqlk"),
+&"spawn": SubResource("Animation_ygnqs")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g7rbq"]
 
 [node name="EnemyRangedTomato" unique_id=1854716505 instance=ExtResource("1_wo52u")]
+_enemy_type = "ranged"
+_move_speed = 120.0
+
+[node name="AnimatedSprite" parent="." index="0" unique_id=514592039]
+sprite_frames = SubResource("SpriteFrames_oxymc")
+animation = &"run"
+
+[node name="Animation" type="AnimationPlayer" parent="AnimatedSprite" index="0" unique_id=1949069118]
+libraries/ = SubResource("AnimationLibrary_xa5m5")
+
+[node name="MainCollision" parent="." index="1" unique_id=631293616]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_g7rbq")
+
+[node name="HitboxArea" parent="." index="2" unique_id=1448917509]
+visible = true
+
+[node name="HitboxCollision" parent="HitboxArea" index="0" unique_id=1869911010]
+visible = false
+position = Vector2(0, 1)

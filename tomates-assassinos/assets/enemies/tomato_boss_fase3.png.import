@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyndhoa0vi11y"
-path="res://.godot/imported/tomato_3.png-5861b98c02a99d85dfa2df2f38c5fb42.ctex"
+uid="uid://cuio1gty1uyb7"
+path="res://.godot/imported/tomato_boss_fase3.png-852bb126e99be74bd33aceb26a8afa4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemies/tomato_3.png"
-dest_files=["res://.godot/imported/tomato_3.png-5861b98c02a99d85dfa2df2f38c5fb42.ctex"]
+source_file="res://assets/enemies/tomato_boss_fase3.png"
+dest_files=["res://.godot/imported/tomato_boss_fase3.png-852bb126e99be74bd33aceb26a8afa4e.ctex"]
 
 [params]
 

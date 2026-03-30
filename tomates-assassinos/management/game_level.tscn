@@ -27,16 +27,16 @@ position = Vector2(166, 206)
 position = Vector2(248, 560)
 
 [node name="WaveSpot_3" parent="WaveManager" unique_id=1606618103 instance=ExtResource("5_a0j3u")]
-position = Vector2(925, 145)
+position = Vector2(856, 143)
 
 [node name="WaveSpot_4" parent="WaveManager" unique_id=894984761 instance=ExtResource("5_a0j3u")]
-position = Vector2(988, 453)
+position = Vector2(1010, 333)
 
 [node name="WaveSpot_5" parent="WaveManager" unique_id=1313963266 instance=ExtResource("5_a0j3u")]
 position = Vector2(551, 144)
 
 [node name="WaveSpot_6" parent="WaveManager" unique_id=1085084635 instance=ExtResource("5_a0j3u")]
-position = Vector2(668, 575)
+position = Vector2(608, 568)
 
 [node name="WaveTimer" type="Timer" parent="WaveManager" unique_id=1493125143]
 one_shot = true

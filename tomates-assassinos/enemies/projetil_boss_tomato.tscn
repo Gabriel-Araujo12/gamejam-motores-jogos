@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://kd0gqbg7ts34"]
+
+[ext_resource type="Texture2D" uid="uid://ctj680hmliunv" path="res://assets/enemies/revolver.png" id="1_1psu7"]
+[ext_resource type="Script" uid="uid://bjilsyk20a7wj" path="res://enemies/projetil_boss_tomato.gd" id="1_lctud"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lctud"]
+radius = 5.0
+height = 28.0
+
+[node name="ProjetilBossTomato" type="Area2D" unique_id=1104634229]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_lctud")
+_move_speed = 288.0
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=285304441]
+texture = ExtResource("1_1psu7")
+region_enabled = true
+region_rect = Rect2(128, 0, 32, 32)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1183132356]
+visible = false
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_lctud")
+
+[connection signal="body_entered" from="." to="." method="_on_attack_area_body_entered"]

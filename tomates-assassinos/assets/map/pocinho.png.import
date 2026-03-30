@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyndhoa0vi11y"
-path="res://.godot/imported/tomato_3.png-5861b98c02a99d85dfa2df2f38c5fb42.ctex"
+uid="uid://btunmrn8s0h1s"
+path="res://.godot/imported/pocinho.png-3e7e638c4549d9674b8c1fdf46ab8ef2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemies/tomato_3.png"
-dest_files=["res://.godot/imported/tomato_3.png-5861b98c02a99d85dfa2df2f38c5fb42.ctex"]
+source_file="res://assets/map/pocinho.png"
+dest_files=["res://.godot/imported/pocinho.png-3e7e638c4549d9674b8c1fdf46ab8ef2.ctex"]
 
 [params]
 

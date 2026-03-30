@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://bx4fe8qjgyie0"]
 
-[ext_resource type="Texture2D" uid="uid://db47s0bwgywar" path="res://assets/spritesheet.png" id="1_eyime"]
 [ext_resource type="Script" uid="uid://cdu7wo1unlp7g" path="res://weapons/base_weapon.gd" id="1_twg0b"]
 
 [node name="WeaponTemplate" type="Node2D" unique_id=908162557 node_paths=PackedStringArray("_attack_timer", "_animation", "_detection_area")]
@@ -12,7 +11,6 @@ _detection_area = NodePath("DetectionArea")
 [node name="WeaponBody" type="Node2D" parent="." unique_id=1291365077]
 
 [node name="WeaponTexture" type="Sprite2D" parent="WeaponBody" unique_id=519575831]
-texture = ExtResource("1_eyime")
 region_enabled = true
 
 [node name="AttackArea" type="Area2D" parent="WeaponBody" unique_id=473488782]

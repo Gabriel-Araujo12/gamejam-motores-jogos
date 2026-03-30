@@ -122,6 +122,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HitboxArea:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_4iqlk"]
 resource_name = "hit"
@@ -139,10 +163,52 @@ tracks/0/keys = {
 "values": [Color(18.892157, 18.892157, 18.892157, 1), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_ygnqs"]
+resource_name = "spawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_spawn_finished"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HitboxArea:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gnafw"]
 _data = {
 &"RESET": SubResource("Animation_1af0c"),
-&"hit": SubResource("Animation_4iqlk")
+&"hit": SubResource("Animation_4iqlk"),
+&"spawn": SubResource("Animation_ygnqs")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jw0k4"]
@@ -158,7 +224,7 @@ sprite_frames = SubResource("SpriteFrames_k64d7")
 animation = &"run"
 frame_progress = 0.82755065
 
-[node name="Animation" type="AnimationPlayer" parent="AnimatedSprite" index="0" unique_id=790551220]
+[node name="Animation" type="AnimationPlayer" parent="AnimatedSprite" index="0" unique_id=936677398]
 libraries/ = SubResource("AnimationLibrary_gnafw")
 
 [node name="MainCollision" parent="." index="1" unique_id=631293616]
@@ -169,8 +235,5 @@ shape = SubResource("CircleShape2D_jw0k4")
 visible = false
 position = Vector2(0, 2.6666667)
 
-[node name="RangeArea" parent="." index="3" unique_id=1812684603]
-visible = false
-
-[node name="Collision" parent="RangeArea" index="0" unique_id=2000807597]
+[node name="Collision" parent="RangeArea" parent_id_path=PackedInt32Array(1812684603) index="0" unique_id=2000807597]
 visible = false

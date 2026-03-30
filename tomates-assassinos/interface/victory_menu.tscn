@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://4lx6rpsnrohc"]
+
+[ext_resource type="Script" uid="uid://36hodwpkmq7n" path="res://interface/victory_menu.gd" id="1_u26yl"]
+[ext_resource type="Texture2D" uid="uid://58ifxhcqea34" path="res://assets/interface/main_menu.png" id="2_okwcy"]
+[ext_resource type="Texture2D" uid="uid://che0hvq7v4mkm" path="res://assets/interface/final.png" id="3_brny1"]
+[ext_resource type="FontFile" uid="uid://nsw8vx00xdp4" path="res://assets/interface/fonts/tinypixel.otf" id="4_sqlmf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1h7en"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_22e5q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0jlfa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ig7qo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qtcpf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1h7en"]
+font = ExtResource("4_sqlmf")
+font_size = 34
+font_color = Color(0, 0, 0, 1)
+
+[node name="VictoryMenu" type="Control" unique_id=1610289481]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u26yl")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1778954940]
+position = Vector2(640, 360.00006)
+scale = Vector2(7.999999, 7.826088)
+texture = ExtResource("2_okwcy")
+
+[node name="Title" type="Sprite2D" parent="." unique_id=263731516]
+position = Vector2(642, 327)
+scale = Vector2(9, 9)
+texture = ExtResource("3_brny1")
+region_enabled = true
+region_rect = Rect2(64, 0, 64, 64)
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="." unique_id=1863337728]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -310.0
+offset_top = -136.0
+offset_right = 310.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 192
+
+[node name="Menu" type="Button" parent="ButtonsContainer" unique_id=1727472097]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81960785, 0.12156863, 0.14509805, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.49019608, 0.15686275, 0.15686275, 1)
+theme_override_fonts/font = ExtResource("4_sqlmf")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1h7en")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_22e5q")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0jlfa")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ig7qo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qtcpf")
+text = "Retornar ao Menu"
+
+[node name="Shadow" type="Label" parent="ButtonsContainer/Menu" unique_id=1471283579]
+show_behind_parent = true
+layout_mode = 0
+offset_top = 4.0
+offset_right = 350.0
+offset_bottom = 44.0
+text = "Retornar ao Menu"
+label_settings = SubResource("LabelSettings_1h7en")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="Button" parent="ButtonsContainer" unique_id=1414351607]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.81960785, 0.12156863, 0.14509805, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.49019608, 0.15686275, 0.15686275, 1)
+theme_override_fonts/font = ExtResource("4_sqlmf")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1h7en")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_22e5q")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0jlfa")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ig7qo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qtcpf")
+text = "Sair do Jogo"
+
+[node name="Shadow" type="Label" parent="ButtonsContainer/Quit" unique_id=1645759462]
+show_behind_parent = true
+layout_mode = 0
+offset_top = 4.0
+offset_right = 350.0
+offset_bottom = 44.0
+text = "Sair do Jogo"
+label_settings = SubResource("LabelSettings_1h7en")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="ButtonsContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="ButtonsContainer/Quit" to="." method="_on_quit_pressed"]

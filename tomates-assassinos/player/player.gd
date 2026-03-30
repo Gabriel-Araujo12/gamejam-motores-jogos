@@ -32,6 +32,7 @@ func update_health(_type: String, _value: int) -> void:
 	match _type:
 		"damage":
 			_health -= _value
+			print(str(_health))
 			
 			if _health <= 0:
 				# Ir para tela das estatísticasa
