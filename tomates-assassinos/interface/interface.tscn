@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://djoo41ehekhwt" path="res://interface/interface.gd" id="1_0c05b"]
 [ext_resource type="FontFile" uid="uid://nsw8vx00xdp4" path="res://assets/interface/fonts/tinypixel.otf" id="1_6nxxo"]
+[ext_resource type="Texture2D" uid="uid://c218lvqrext3y" path="res://assets/interface/health.png" id="3_athsf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0c05b"]
 font = ExtResource("1_6nxxo")
@@ -11,21 +12,146 @@ outline_color = Color(0, 0, 0, 1)
 shadow_color = Color(0, 0, 0, 0.6)
 shadow_offset = Vector2(2, 2)
 
-[node name="Interface" type="CanvasLayer" unique_id=752724292 node_paths=PackedStringArray("_wave_and_time")]
-script = ExtResource("1_0c05b")
-_wave_and_time = NodePath("WaveAndTime")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0c05b"]
+bg_color = Color(0.28, 0.28, 0.28, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
 
-[node name="WaveAndTime" type="Label" parent="." unique_id=1924257373]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_athsf"]
+bg_color = Color(0, 0.64, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_athsf"]
+font = ExtResource("1_6nxxo")
+font_size = 56
+font_color = Color(0.81960785, 0.12156863, 0.14509805, 1)
+shadow_size = 4
+shadow_color = Color(0.28, 0.0896, 0.0896, 1)
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0c05b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_athsf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o02ce"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0scnv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_talkl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o02ce"]
+font = ExtResource("1_6nxxo")
+font_size = 34
+font_color = Color(0.2784314, 0.09019608, 0.09019608, 1)
+
+[node name="Interface" type="CanvasLayer" unique_id=752724292 node_paths=PackedStringArray("_wave_and_enemies", "_health_bar")]
+process_mode = 3
+script = ExtResource("1_0c05b")
+_wave_and_enemies = NodePath("WaveAndEnemies")
+_health_bar = NodePath("HealthBar")
+
+[node name="WaveAndEnemies" type="Label" parent="." unique_id=1924257373]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -112.0
-offset_top = 24.0
-offset_right = 112.0
-offset_bottom = 65.0
+offset_left = -154.0
+offset_top = 40.0
+offset_right = 154.0
+offset_bottom = 95.0
 grow_horizontal = 2
-text = "ONDA 7
-TEMPO RESTANTE - 00:30"
+text = "ONDA 7"
 label_settings = SubResource("LabelSettings_0c05b")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=324017587]
+offset_left = 90.0
+offset_top = 42.0
+offset_right = 340.0
+offset_bottom = 92.0
+theme_override_styles/background = SubResource("StyleBoxFlat_0c05b")
+theme_override_styles/fill = SubResource("StyleBoxFlat_athsf")
+value = 100.0
+show_percentage = false
+
+[node name="HealthBarTexture" type="Sprite2D" parent="." unique_id=274564971]
+position = Vector2(190, 64)
+scale = Vector2(2.4921875, 2.609375)
+texture = ExtResource("3_athsf")
+
+[node name="TransitionBetweenWaves" type="Control" parent="." unique_id=1961179218]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="TransitionBetweenWaves" unique_id=1298997134]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="Title" type="Label" parent="TransitionBetweenWaves/Background" unique_id=2067633386]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_top = 128.0
+offset_right = 320.0
+offset_bottom = 259.0
+grow_horizontal = 2
+text = "Pronto para a onda 
+seguinte?"
+label_settings = SubResource("LabelSettings_athsf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Proceed" type="Button" parent="TransitionBetweenWaves/Background" unique_id=978689962]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -31.5
+offset_top = -168.0
+offset_right = 31.5
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.81960785, 0.12156863, 0.14509805, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.49019608, 0.15686275, 0.15686275, 1)
+theme_override_fonts/font = ExtResource("1_6nxxo")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0c05b")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_athsf")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_o02ce")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0scnv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_talkl")
+text = "Sim"
+
+[node name="Shadow" type="Label" parent="TransitionBetweenWaves/Background/Proceed" unique_id=613390611]
+show_behind_parent = true
+layout_mode = 0
+offset_top = 4.0
+offset_right = 63.0
+offset_bottom = 44.0
+text = "Sim"
+label_settings = SubResource("LabelSettings_o02ce")
+vertical_alignment = 1
+
+[connection signal="pressed" from="TransitionBetweenWaves/Background/Proceed" to="." method="_on_proceed_pressed"]

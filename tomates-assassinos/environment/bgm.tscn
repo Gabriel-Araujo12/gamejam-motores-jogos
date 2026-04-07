@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://d3jr8cxjar5q6"]
+
+[ext_resource type="Script" uid="uid://dlojrxrn6ypj5" path="res://environment/bgm.gd" id="1_n5gd7"]
+[ext_resource type="AudioStream" uid="uid://bf6o3n1084xwb" path="res://assets/musics/bgm/menu_music.ogg" id="2_nfocp"]
+[ext_resource type="AudioStream" uid="uid://ea04y4jx2lis" path="res://assets/musics/bgm/game_music.ogg" id="3_n5gd7"]
+[ext_resource type="AudioStream" uid="uid://dk68tmrusejw4" path="res://assets/musics/bgm/boss_music.ogg" id="4_n5gd7"]
+
+[node name="BGM" type="Node2D" unique_id=1934046420]
+script = ExtResource("1_n5gd7")
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=1978514497]
+stream = ExtResource("2_nfocp")
+volume_db = -16.0
+autoplay = true
+
+[node name="GameMusic" type="AudioStreamPlayer" parent="." unique_id=642595959]
+process_mode = 3
+stream = ExtResource("3_n5gd7")
+volume_db = -16.0
+autoplay = true
+
+[node name="BossMusic" type="AudioStreamPlayer" parent="." unique_id=1313694317]
+stream = ExtResource("4_n5gd7")
+volume_db = -16.0
+autoplay = true

@@ -30,8 +30,9 @@ radius = 148.0
 
 [node name="Escopeta" unique_id=908162557 instance=ExtResource("1_xr6a4")]
 _attack_type = "ranged"
-_attack_damage = 2
-_attack_cooldown = 1.6
+_weapon_sfx_name = "escopeta"
+_attack_damage = 35
+_attack_cooldown = 2.0
 
 [node name="WeaponTexture" parent="WeaponBody" parent_id_path=PackedInt32Array(1291365077) index="0" unique_id=519575831]
 position = Vector2(26, -3.5527137e-15)

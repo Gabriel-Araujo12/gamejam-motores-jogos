@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://da8h8d34v4dpk"]
 
 [ext_resource type="PackedScene" uid="uid://vkrmm83b1rpc" path="res://enemies/enemy_template.tscn" id="1_flald"]
-[ext_resource type="Texture2D" uid="uid://2prh5l1y7vrm" path="res://assets/enemies/tomato_death.png" id="2_1af0c"]
-[ext_resource type="Texture2D" uid="uid://cfimu3qm8fu3p" path="res://assets/enemies/tomato_1.png" id="2_3ev8j"]
+[ext_resource type="Texture2D" uid="uid://ds8n8owrtso6h" path="res://assets/enemies/tomato_death.png" id="2_1af0c"]
+[ext_resource type="Texture2D" uid="uid://cfimu3qm8fu3p" path="res://assets/enemies/tomato_basic.png" id="2_3ev8j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i2vck"]
 atlas = ExtResource("2_1af0c")
@@ -23,10 +23,6 @@ region = Rect2(96, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_u6pwd"]
 atlas = ExtResource("2_1af0c")
 region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fmxtm"]
-atlas = ExtResource("2_1af0c")
-region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6fauw"]
 atlas = ExtResource("2_3ev8j")
@@ -73,9 +69,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u6pwd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fmxtm")
 }],
 "loop": false,
 "name": &"death",
@@ -221,13 +214,12 @@ height = 28.0
 
 [node name="EnemyTomato" unique_id=1854716505 instance=ExtResource("1_flald")]
 _move_speed = 120.0
-_health = 12
-_damage = 6
+_health = 20
+_damage = 15
 
 [node name="AnimatedSprite" parent="." index="0" unique_id=514592039]
 sprite_frames = SubResource("SpriteFrames_i2vck")
 animation = &"run"
-frame_progress = 0.94636714
 
 [node name="Animation" type="AnimationPlayer" parent="AnimatedSprite" index="0" unique_id=1768398448]
 libraries/ = SubResource("AnimationLibrary_1af0c")
@@ -237,6 +229,5 @@ position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_ntbau")
 
 [node name="HitboxCollision" parent="HitboxArea" parent_id_path=PackedInt32Array(1448917509) index="0" unique_id=1869911010]
-visible = false
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_6fauw")

@@ -30,8 +30,9 @@ radius = 224.0
 
 [node name="Revolver" unique_id=908162557 instance=ExtResource("1_jfilu")]
 _attack_type = "ranged"
-_attack_damage = 8
-_attack_cooldown = 1.2
+_weapon_sfx_name = "revolver"
+_attack_damage = 25
+_attack_cooldown = 0.5
 
 [node name="WeaponTexture" parent="WeaponBody" parent_id_path=PackedInt32Array(1291365077) index="0" unique_id=519575831]
 position = Vector2(26, 0)

@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cbexcpjq8u78n" path="res://assets/weapons/forcado.png" id="2_f162p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f162p"]
-radius = 8.0
-height = 18.0
+radius = 5.0
+height = 14.0
 
 [sub_resource type="Animation" id="Animation_f162p"]
 length = 0.001
@@ -72,8 +72,9 @@ _data = {
 radius = 61.204575
 
 [node name="Forcado" unique_id=908162557 instance=ExtResource("1_ogr5a")]
-_attack_damage = 8
-_attack_cooldown = 0.8
+_weapon_sfx_name = "forcado"
+_attack_damage = 30
+_attack_cooldown = 1.8
 
 [node name="WeaponTexture" parent="WeaponBody" parent_id_path=PackedInt32Array(1291365077) index="0" unique_id=519575831]
 position = Vector2(30.999998, 0)
@@ -86,7 +87,7 @@ region_enabled = false
 visible = false
 
 [node name="Collision" type="CollisionShape2D" parent="WeaponBody/AttackArea" index="0" unique_id=688816989]
-position = Vector2(51, 0)
+position = Vector2(39, 0)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_f162p")
 

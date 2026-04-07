@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://vkrmm83b1rpc" path="res://enemies/enemy_template.tscn" id="1_yxpds"]
 [ext_resource type="Texture2D" uid="uid://c5sqdwovbilj8" path="res://assets/enemies/tomato_boss_fase2.png" id="2_xtliv"]
-[ext_resource type="Texture2D" uid="uid://2prh5l1y7vrm" path="res://assets/enemies/tomato_death.png" id="3_7bdce"]
+[ext_resource type="Texture2D" uid="uid://ds8n8owrtso6h" path="res://assets/enemies/tomato_death.png" id="3_7bdce"]
 [ext_resource type="Texture2D" uid="uid://c8t08a1ewrya8" path="res://assets/enemies/tomato_boss_fase1.png" id="4_xtliv"]
 [ext_resource type="Texture2D" uid="uid://cuio1gty1uyb7" path="res://assets/enemies/tomato_boss_fase3.png" id="5_xtliv"]
 
@@ -42,29 +42,25 @@ region = Rect2(896, 0, 64, 64)
 atlas = ExtResource("2_xtliv")
 region = Rect2(960, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xab6m"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtliv"]
 atlas = ExtResource("3_7bdce")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vi3ph"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xab6m"]
 atlas = ExtResource("3_7bdce")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g2dbu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vi3ph"]
 atlas = ExtResource("3_7bdce")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4b6u8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2dbu"]
 atlas = ExtResource("3_7bdce")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c638l"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4b6u8"]
 atlas = ExtResource("3_7bdce")
 region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_raj41"]
-atlas = ExtResource("3_7bdce")
-region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7bdce"]
 atlas = ExtResource("4_xtliv")
@@ -186,6 +182,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_xtliv")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_xab6m")
 }, {
 "duration": 1.0,
@@ -196,12 +195,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4b6u8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c638l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_raj41")
 }],
 "loop": false,
 "name": &"death",
@@ -391,17 +384,17 @@ _data = {
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yxpds"]
 radius = 22.0
-height = 58.0
+height = 64.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8fsp4"]
 radius = 22.0
-height = 58.0
+height = 64.0
 
 [node name="EnemyBoss" unique_id=1854716505 instance=ExtResource("1_yxpds")]
 _enemy_type = "boss"
 _move_speed = 120.0
-_health = 25
-_damage = 2
+_health = 900
+_damage = 30
 
 [node name="AnimatedSprite" parent="." index="0" unique_id=514592039]
 sprite_frames = SubResource("SpriteFrames_fbuyp")
@@ -411,14 +404,17 @@ animation = &"run_fase1"
 libraries/ = SubResource("AnimationLibrary_yxpds")
 
 [node name="MainCollision" parent="." index="1" unique_id=631293616]
-position = Vector2(0, 4)
+position = Vector2(-5, 4)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_yxpds")
 
 [node name="HitboxCollision" parent="HitboxArea" parent_id_path=PackedInt32Array(1448917509) index="0" unique_id=1869911010]
-position = Vector2(0, 4)
+position = Vector2(-5, 4)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_8fsp4")
 
+[node name="DashWaitTime" parent="." index="4" unique_id=2082582616]
+wait_time = 0.6
+
 [node name="DashTimer" parent="." index="5" unique_id=1023843194]
-wait_time = 0.3
+wait_time = 0.5

@@ -47,7 +47,7 @@ _data = {
 &"animation_popup": SubResource("Animation_sldt2")
 }
 
-[node name="TextPopup" type="Label" unique_id=1045786367]
+[node name="TextPopup" type="Label" unique_id=1045786367 groups=["textpopup"]]
 z_index = 5
 custom_minimum_size = Vector2(40, 0)
 offset_right = 40.0

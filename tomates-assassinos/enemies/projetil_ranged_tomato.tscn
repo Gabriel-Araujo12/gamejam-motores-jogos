@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cpwfrh2ctlsus"]
 
 [ext_resource type="Script" uid="uid://chjvh7yq0hxdw" path="res://enemies/projetil_ranged_tomato.gd" id="1_nyqbk"]
-[ext_resource type="Texture2D" uid="uid://cskevj1d6s5mo" path="res://assets/enemies/tomato_4.png" id="2_e633x"]
+[ext_resource type="Texture2D" uid="uid://dugjjtb78xmvw" path="res://assets/enemies/tomato_ranged.png" id="2_e633x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pv6w6"]
 radius = 5.0
@@ -11,7 +11,7 @@ height = 28.0
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_nyqbk")
-_move_speed = 288.0
+_move_speed = 320.0
 
 [node name="Texture" type="Sprite2D" parent="." unique_id=409004798]
 texture = ExtResource("2_e633x")

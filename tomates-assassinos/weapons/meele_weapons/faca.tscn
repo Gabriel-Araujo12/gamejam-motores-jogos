@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ce8fplw0jte2j" path="res://assets/weapons/faca.png" id="2_nsnxy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qd6u2"]
-size = Vector2(8, 29.5)
+size = Vector2(6, 21)
 
 [sub_resource type="Animation" id="Animation_2cwin"]
 length = 0.001
@@ -71,8 +71,8 @@ _data = {
 radius = 54.00926
 
 [node name="Faca" unique_id=908162557 instance=ExtResource("1_s7vyj")]
-_attack_damage = 4
-_attack_cooldown = 0.6
+_attack_damage = 25
+_attack_cooldown = 0.8
 
 [node name="WeaponTexture" parent="WeaponBody" parent_id_path=PackedInt32Array(1291365077) index="0" unique_id=519575831]
 position = Vector2(30.999998, 0)
@@ -86,7 +86,7 @@ region_rect = Rect2(0, 576, 64, 64)
 visible = false
 
 [node name="Collision" type="CollisionShape2D" parent="WeaponBody/AttackArea" index="0" unique_id=2518309]
-position = Vector2(38, 2)
+position = Vector2(33.5, 1)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_qd6u2")
 disabled = true

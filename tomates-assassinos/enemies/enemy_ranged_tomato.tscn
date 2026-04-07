@@ -1,56 +1,58 @@
 [gd_scene format=3 uid="uid://cuwu843xjrdao"]
 
 [ext_resource type="PackedScene" uid="uid://vkrmm83b1rpc" path="res://enemies/enemy_template.tscn" id="1_wo52u"]
-[ext_resource type="Texture2D" uid="uid://2prh5l1y7vrm" path="res://assets/enemies/tomato_death.png" id="2_ygnqs"]
-[ext_resource type="Texture2D" uid="uid://cskevj1d6s5mo" path="res://assets/enemies/tomato_4.png" id="3_akqn8"]
+[ext_resource type="Texture2D" uid="uid://ds8n8owrtso6h" path="res://assets/enemies/tomato_death.png" id="2_ygnqs"]
+[ext_resource type="Texture2D" uid="uid://dugjjtb78xmvw" path="res://assets/enemies/tomato_ranged.png" id="3_akqn8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygnqs"]
+atlas = ExtResource("2_ygnqs")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akqn8"]
+atlas = ExtResource("2_ygnqs")
+region = Rect2(512, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1gs24"]
 atlas = ExtResource("2_ygnqs")
-region = Rect2(0, 0, 32, 32)
+region = Rect2(544, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rcdbi"]
 atlas = ExtResource("2_ygnqs")
-region = Rect2(32, 0, 32, 32)
+region = Rect2(576, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_damun"]
 atlas = ExtResource("2_ygnqs")
-region = Rect2(64, 0, 32, 32)
+region = Rect2(608, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uyknx"]
-atlas = ExtResource("2_ygnqs")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pg20h"]
-atlas = ExtResource("2_ygnqs")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cfnuu"]
-atlas = ExtResource("2_ygnqs")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o50o6"]
 atlas = ExtResource("3_akqn8")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xb7fn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg20h"]
 atlas = ExtResource("3_akqn8")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g5yq0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfnuu"]
 atlas = ExtResource("3_akqn8")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4xo1j"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_o50o6"]
 atlas = ExtResource("3_akqn8")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4nhb1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xb7fn"]
 atlas = ExtResource("3_akqn8")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oxymc"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygnqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akqn8")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1gs24")
 }, {
@@ -59,7 +61,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_damun")
+}],
+"loop": false,
+"name": &"death",
+"speed": 10.0
 }, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uyknx")
 }, {
@@ -68,26 +75,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cfnuu")
-}],
-"loop": false,
-"name": &"death",
-"speed": 10.0
 }, {
-"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_o50o6")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xb7fn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g5yq0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4xo1j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4nhb1")
 }],
 "loop": true,
 "name": &"run",
@@ -198,10 +191,16 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g7rbq"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ygnqs"]
+radius = 9.0
 
 [node name="EnemyRangedTomato" unique_id=1854716505 instance=ExtResource("1_wo52u")]
 _enemy_type = "ranged"
-_move_speed = 120.0
+_move_speed = 150.0
+_health = 15
+_damage = 10
 
 [node name="AnimatedSprite" parent="." index="0" unique_id=514592039]
 sprite_frames = SubResource("SpriteFrames_oxymc")
@@ -214,9 +213,6 @@ libraries/ = SubResource("AnimationLibrary_xa5m5")
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_g7rbq")
 
-[node name="HitboxArea" parent="." index="2" unique_id=1448917509]
-visible = true
-
-[node name="HitboxCollision" parent="HitboxArea" index="0" unique_id=1869911010]
-visible = false
+[node name="HitboxCollision" parent="HitboxArea" parent_id_path=PackedInt32Array(1448917509) index="0" unique_id=1869911010]
 position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_ygnqs")

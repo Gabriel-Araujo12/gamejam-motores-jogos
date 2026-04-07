@@ -96,14 +96,14 @@ func _ranged(_direction: Vector2) -> void:
 			_shoot_timer.start()
 
 func _boss(_direction: Vector2) -> void:
-	if _health > 20:
+	if _health > 600:
 		animated_sprite.play("run_fase1")
 		velocity = _direction * _move_speed
 		
 		if _shoot_timer.is_stopped():
 				_shoot_timer.start()
 	
-	elif _health > 10 and _health <= 20:
+	elif _health > 300 and _health <= 600:
 		if not _shoot_timer.is_stopped():
 			_shoot_timer.stop()
 		
@@ -127,6 +127,7 @@ func update_health(_value: int) -> void:
 	_spawn_text_popup(_value)
 	
 	if _health <= 0:
+		sfx.play_tomatodeath()
 		set_physics_process(false)
 		animated_sprite.play("death")
 		main_collision.set_deferred("disabled", true)
@@ -158,7 +159,7 @@ func _on_invencibility_timer_timeout() -> void:
 	_hitbox_area.set_deferred("monitoring", true)
 
 func _on_range_area_body_entered(_body) -> void:
-	var is_boss_fase2 = (_enemy_type == "boss" and _health > 10 and _health <= 20)
+	var is_boss_fase2 = (_enemy_type == "boss" and _health > 300 and _health <= 600)
 	
 	if _enemy_type != "chase_and_dash" and not is_boss_fase2:
 		return
@@ -212,3 +213,9 @@ func _on_shoot_timer_timeout() -> void:
 			
 	elif _enemy_type == "boss":
 			_spawn_projectile_boss_tomato()
+
+func die():
+	queue_free()
+	
+	if global.wave_manager:
+		global.wave_manager.check_wave_status()

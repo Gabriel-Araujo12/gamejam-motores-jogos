@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://chf6q1fvhkgtc"]
+
+[ext_resource type="Script" uid="uid://dbmjbj2di6fj6" path="res://environment/sfx.gd" id="1_gq7ky"]
+[ext_resource type="AudioStream" uid="uid://b1kncctn74u5t" path="res://assets/musics/sfx/faca.ogg" id="1_ulvpn"]
+[ext_resource type="AudioStream" uid="uid://cwbpdgjw52k87" path="res://assets/musics/sfx/foice.ogg" id="2_gq7ky"]
+[ext_resource type="AudioStream" uid="uid://dkbvhwiqpf2op" path="res://assets/musics/sfx/forcado.ogg" id="3_d7qr1"]
+[ext_resource type="AudioStream" uid="uid://chcwictn0k73h" path="res://assets/musics/sfx/revolver.ogg" id="4_8rd1x"]
+[ext_resource type="AudioStream" uid="uid://ct76d7hs0umay" path="res://assets/musics/sfx/escopeta.ogg" id="5_cbxlt"]
+[ext_resource type="AudioStream" uid="uid://b71cwjtgnro3n" path="res://assets/musics/sfx/hit_player.ogg" id="6_gm3yy"]
+[ext_resource type="AudioStream" uid="uid://bdes61mmsy828" path="res://assets/musics/sfx/tomato_death.ogg" id="7_nyq10"]
+
+[node name="SFX" type="Node2D" unique_id=505384598]
+script = ExtResource("1_gq7ky")
+
+[node name="Faca" type="AudioStreamPlayer" parent="." unique_id=248605076]
+stream = ExtResource("1_ulvpn")
+volume_db = -10.0
+
+[node name="Foice" type="AudioStreamPlayer" parent="." unique_id=2041425703]
+stream = ExtResource("2_gq7ky")
+
+[node name="Forcado" type="AudioStreamPlayer" parent="." unique_id=296985847]
+stream = ExtResource("3_d7qr1")
+volume_db = -10.0
+
+[node name="Revolver" type="AudioStreamPlayer" parent="." unique_id=957526424]
+stream = ExtResource("4_8rd1x")
+volume_db = -12.0
+
+[node name="Escopeta" type="AudioStreamPlayer" parent="." unique_id=316229475]
+stream = ExtResource("5_cbxlt")
+volume_db = -16.0
+
+[node name="PlayerHit" type="AudioStreamPlayer" parent="." unique_id=177950554]
+stream = ExtResource("6_gm3yy")
+volume_db = -16.0
+
+[node name="TomatoDeath" type="AudioStreamPlayer" parent="." unique_id=2089858107]
+stream = ExtResource("7_nyq10")
+volume_db = -16.0

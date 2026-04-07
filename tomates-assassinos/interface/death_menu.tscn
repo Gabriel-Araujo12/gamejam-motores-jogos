@@ -56,7 +56,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 192
 
-[node name="Menu" type="Button" parent="ButtonsContainer" unique_id=1727472097]
+[node name="Retry" type="Button" parent="ButtonsContainer" unique_id=1727472097]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.81960785, 0.12156863, 0.14509805, 1)
@@ -69,20 +69,20 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_22e5q")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_0jlfa")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ig7qo")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qtcpf")
-text = "Retornar ao Menu"
+text = "Tentar novamente"
 
-[node name="Shadow" type="Label" parent="ButtonsContainer/Menu" unique_id=1471283579]
+[node name="Shadow" type="Label" parent="ButtonsContainer/Retry" unique_id=1471283579]
 show_behind_parent = true
 layout_mode = 0
 offset_top = 4.0
 offset_right = 350.0
 offset_bottom = 44.0
-text = "Retornar ao Menu"
+text = "Tentar novamente"
 label_settings = SubResource("LabelSettings_1h7en")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Quit" type="Button" parent="ButtonsContainer" unique_id=1414351607]
+[node name="Menu" type="Button" parent="ButtonsContainer" unique_id=1414351607]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.81960785, 0.12156863, 0.14509805, 1)
@@ -95,18 +95,18 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_22e5q")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_0jlfa")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ig7qo")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qtcpf")
-text = "Sair"
+text = "Retornar ao menu"
 
-[node name="Shadow" type="Label" parent="ButtonsContainer/Quit" unique_id=1645759462]
+[node name="Shadow" type="Label" parent="ButtonsContainer/Menu" unique_id=1645759462]
 show_behind_parent = true
 layout_mode = 0
 offset_top = 4.0
 offset_right = 350.0
 offset_bottom = 44.0
-text = "Sair"
+text = "Retornar ao menu"
 label_settings = SubResource("LabelSettings_1h7en")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="pressed" from="ButtonsContainer/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="ButtonsContainer/Menu" to="." method="_on_menu_pressed"]
-[connection signal="pressed" from="ButtonsContainer/Quit" to="." method="_on_quit_pressed"]

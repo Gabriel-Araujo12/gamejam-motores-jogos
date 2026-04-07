@@ -2,7 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dq536mmgakgwj" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://b0twvaonx36tb" path="res://assets/player/player.png" id="2_g1dw6"]
-[ext_resource type="PackedScene" uid="uid://bxyb2qgp283hw" path="res://weapons/ranged_weapons/escopeta.tscn" id="3_g1dw6"]
+[ext_resource type="PackedScene" uid="uid://bs0sp0ag2jgfr" path="res://weapons/meele_weapons/faca.tscn" id="3_boad6"]
+[ext_resource type="PackedScene" uid="uid://cr815etm3w1t0" path="res://weapons/meele_weapons/forcado.tscn" id="3_g1dw6"]
+[ext_resource type="PackedScene" uid="uid://d0e6gitsumddf" path="res://weapons/meele_weapons/foice.tscn" id="4_rgyib"]
+[ext_resource type="PackedScene" uid="uid://64ic7rkhgshd" path="res://weapons/ranged_weapons/revolver.tscn" id="6_hg6s5"]
+[ext_resource type="PackedScene" uid="uid://bxyb2qgp283hw" path="res://weapons/ranged_weapons/escopeta.tscn" id="7_8t03j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yw30f"]
 atlas = ExtResource("2_g1dw6")
@@ -73,20 +77,61 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_boad6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rgyib"]
+resource_name = "hit"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hg6s5"]
+_data = {
+&"RESET": SubResource("Animation_boad6"),
+&"hit": SubResource("Animation_rgyib")
+}
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yllr7"]
-radius = 3.4041314
-height = 15.669992
+radius = 2.4315224
+height = 14.690618
 
 [node name="Player" type="CharacterBody2D" unique_id=541100644]
 script = ExtResource("1_rkbax")
-_move_speed = 192.0
+_health = 100
+_move_speed = 195.0
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=1167032844]
 sprite_frames = SubResource("SpriteFrames_ebec5")
-animation = &"run"
-frame_progress = 0.9898927
+animation = &"idle"
+
+[node name="Animation" type="AnimationPlayer" parent="AnimatedSprite" unique_id=908519348]
+libraries/ = SubResource("AnimationLibrary_hg6s5")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1951158871]
+visible = false
 position = Vector2(0, 0.9999999)
 scale = Vector2(2.056325, 2.04212)
 shape = SubResource("CapsuleShape2D_yllr7")
@@ -99,5 +144,26 @@ editor_draw_drag_margin = true
 [node name="WeaponsManager" type="Node2D" parent="." unique_id=439646837]
 
 [node name="Weapon_1" type="Marker2D" parent="WeaponsManager" unique_id=2113246366]
+visible = false
 
-[node name="Escopeta" parent="WeaponsManager/Weapon_1" unique_id=908162557 instance=ExtResource("3_g1dw6")]
+[node name="Faca" parent="WeaponsManager/Weapon_1" unique_id=908162557 instance=ExtResource("3_boad6")]
+
+[node name="Weapon_2" type="Marker2D" parent="WeaponsManager" unique_id=218528569]
+visible = false
+
+[node name="Foice" parent="WeaponsManager/Weapon_2" unique_id=229976286 instance=ExtResource("4_rgyib")]
+
+[node name="Weapon_3" type="Marker2D" parent="WeaponsManager" unique_id=1717589244]
+visible = false
+
+[node name="Forcado" parent="WeaponsManager/Weapon_3" unique_id=95392348 instance=ExtResource("3_g1dw6")]
+
+[node name="Weapon_4" type="Marker2D" parent="WeaponsManager" unique_id=815228139]
+visible = false
+
+[node name="Revolver" parent="WeaponsManager/Weapon_4" unique_id=329803612 instance=ExtResource("6_hg6s5")]
+
+[node name="Weapon_5" type="Marker2D" parent="WeaponsManager" unique_id=196988473]
+visible = false
+
+[node name="Escopeta" parent="WeaponsManager/Weapon_5" unique_id=1982763779 instance=ExtResource("7_8t03j")]

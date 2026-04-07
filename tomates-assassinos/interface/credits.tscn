@@ -91,7 +91,10 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "ASSETS
 
-videodante"
+videodante, ADnova, TheLastOneOnEarth,
+qubodup, byronabadia, MinecraftGamerLR,
+Rock Savage, Marregheriti, HonorHunter,
+unfa, zagi2"
 label_settings = SubResource("LabelSettings_0s0mm")
 horizontal_alignment = 1
 vertical_alignment = 1
