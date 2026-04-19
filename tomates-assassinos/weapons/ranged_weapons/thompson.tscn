@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bufw23g05yps8"]
+
+[ext_resource type="PackedScene" uid="uid://bx4fe8qjgyie0" path="res://weapons/weapon_template.tscn" id="1_brfin"]
+[ext_resource type="Texture2D" uid="uid://dow3u7ipx507y" path="res://assets/weapons/thompson.png" id="2_tuuh5"]
+
+[sub_resource type="Animation" id="Animation_brfin"]
+resource_name = "attack"
+length = 0.2
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_spawn_projectile_thompson"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tuuh5"]
+_data = {
+&"attack": SubResource("Animation_brfin")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_brfin"]
+radius = 224.0
+
+[node name="Thompson" unique_id=908162557 instance=ExtResource("1_brfin")]
+_attack_type = "ranged"
+_weapon_sfx_name = "thompson"
+_attack_damage = 8
+_attack_cooldown = 0.2
+
+[node name="WeaponTexture" parent="WeaponBody" parent_id_path=PackedInt32Array(1291365077) index="0" unique_id=519575831]
+position = Vector2(31, 0)
+texture = ExtResource("2_tuuh5")
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Animation" parent="." index="1" unique_id=1821914207]
+libraries/ = SubResource("AnimationLibrary_tuuh5")
+
+[node name="DetectionArea" parent="." index="2" unique_id=51058909]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" index="0" unique_id=147856730]
+shape = SubResource("CircleShape2D_brfin")

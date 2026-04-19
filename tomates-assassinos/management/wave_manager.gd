@@ -67,6 +67,7 @@ var _player_dead: bool = false
 
 @export_category("Objects")
 @export var _wave_spawner_timer: Timer
+@export var _wave_start_timer: Timer
 @export var _interface: CanvasLayer = null
 @export var _player: Player = null
 
@@ -85,16 +86,19 @@ func start_new_wave() -> void:
 	_player.reset_health()
 	_interface.update_wave(_current_wave)
 	
+	if _current_wave < 7:
+		bgm.play_game()
+	else:
+		bgm.play_boss()
+	
+	_wave_start_timer.start()
+	await _wave_start_timer.timeout
+	
 	_spawn_enemies()
 	_spawned_batches += 1
 	
 	if _spawned_batches < _waves_dict[_current_wave]["wave_amount"]:
 		_wave_spawner_timer.start(_waves_dict[_current_wave]["wave_spawn_cooldown"])
-	
-	if _current_wave < 7:
-		bgm.play_game()
-	else:
-		bgm.play_boss()
 
 func check_wave_status() -> void:
 	await get_tree().process_frame 

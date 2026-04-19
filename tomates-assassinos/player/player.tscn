@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d0e6gitsumddf" path="res://weapons/meele_weapons/foice.tscn" id="4_rgyib"]
 [ext_resource type="PackedScene" uid="uid://64ic7rkhgshd" path="res://weapons/ranged_weapons/revolver.tscn" id="6_hg6s5"]
 [ext_resource type="PackedScene" uid="uid://bxyb2qgp283hw" path="res://weapons/ranged_weapons/escopeta.tscn" id="7_8t03j"]
+[ext_resource type="PackedScene" uid="uid://bufw23g05yps8" path="res://weapons/ranged_weapons/thompson.tscn" id="8_rgyib"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yw30f"]
 atlas = ExtResource("2_g1dw6")
@@ -91,10 +92,22 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_rgyib"]
 resource_name = "hit"
-length = 0.2
+length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -102,10 +115,22 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(18.892157, 18.892157, 18.892157, 1), Color(1, 1, 1, 1), Color(18.892157, 18.892157, 18.892157, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.7, 0.7), Vector2(1, 1), Vector2(0.7, 0.7), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hg6s5"]
@@ -118,10 +143,12 @@ _data = {
 radius = 2.4315224
 height = 14.690618
 
-[node name="Player" type="CharacterBody2D" unique_id=541100644]
+[node name="Player" type="CharacterBody2D" unique_id=541100644 node_paths=PackedStringArray("_invincibility_timer", "_change_timer")]
 script = ExtResource("1_rkbax")
 _health = 100
 _move_speed = 195.0
+_invincibility_timer = NodePath("InvincibilityTimer")
+_change_timer = NodePath("ChangeTimer")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=1167032844]
 sprite_frames = SubResource("SpriteFrames_ebec5")
@@ -167,3 +194,15 @@ visible = false
 visible = false
 
 [node name="Escopeta" parent="WeaponsManager/Weapon_5" unique_id=1982763779 instance=ExtResource("7_8t03j")]
+
+[node name="Weapon_6" type="Marker2D" parent="WeaponsManager" unique_id=394838601]
+visible = false
+
+[node name="Thompson" parent="WeaponsManager/Weapon_6" unique_id=604605774 instance=ExtResource("8_rgyib")]
+
+[node name="InvincibilityTimer" type="Timer" parent="." unique_id=2051946122]
+wait_time = 1.5
+one_shot = true
+
+[node name="ChangeTimer" type="Timer" parent="." unique_id=1846099602]
+one_shot = true

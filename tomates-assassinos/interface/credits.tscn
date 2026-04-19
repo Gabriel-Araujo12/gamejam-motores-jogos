@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://58ifxhcqea34" path="res://assets/interface/main_menu.png" id="1_8lxjy"]
 [ext_resource type="Script" uid="uid://bt7rscp7clfa3" path="res://interface/credits.gd" id="1_mdjxt"]
-[ext_resource type="FontFile" uid="uid://nsw8vx00xdp4" path="res://assets/interface/fonts/tinypixel.otf" id="2_0s0mm"]
+[ext_resource type="FontFile" uid="uid://bktp1btvnvpeg" path="res://assets/interface/fonts/tinypixel.ttf" id="2_0s0mm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mdjxt"]
 font = ExtResource("2_0s0mm")
-font_size = 56
+font_size = 48
 font_color = Color(0.81960785, 0.12156863, 0.14509805, 1)
 shadow_size = 4
 shadow_color = Color(0, 0, 0, 1)
@@ -14,7 +14,7 @@ shadow_offset = Vector2(0, 4)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0s0mm"]
 font = ExtResource("2_0s0mm")
-font_size = 34
+font_size = 24
 font_color = Color(0.81960785, 0.12156863, 0.14509805, 1)
 shadow_size = 4
 shadow_color = Color(0, 0, 0, 1)
@@ -32,7 +32,7 @@ shadow_offset = Vector2(0, 4)
 
 [sub_resource type="LabelSettings" id="LabelSettings_e7cll"]
 font = ExtResource("2_0s0mm")
-font_size = 34
+font_size = 36
 font_color = Color(0, 0, 0, 1)
 
 [node name="Credits" type="Control" unique_id=684173172]
@@ -84,17 +84,17 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -456.0
-offset_top = -332.0
-offset_right = 456.0
+offset_left = -550.5
+offset_top = -360.0
+offset_right = 550.5
+offset_bottom = -28.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "ASSETS
 
-videodante, ADnova, TheLastOneOnEarth,
-qubodup, byronabadia, MinecraftGamerLR,
-Rock Savage, Marregheriti, HonorHunter,
-unfa, zagi2"
+ADnova, TheLastOneOnEarth,qubodup, byronabadia, 
+MinecraftGamerLR, Rock Savage, Marregheriti, 
+HonorHunter, unfa, zagi2"
 label_settings = SubResource("LabelSettings_0s0mm")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -113,7 +113,7 @@ theme_override_colors/font_color = Color(0.81960785, 0.12156863, 0.14509805, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0.49019608, 0.15686275, 0.15686275, 1)
 theme_override_fonts/font = ExtResource("2_0s0mm")
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0s0mm")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_mdjxt")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_e7cll")

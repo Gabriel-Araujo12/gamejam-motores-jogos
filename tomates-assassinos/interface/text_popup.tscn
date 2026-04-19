@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://wokqf2qrukoi"]
 
-[ext_resource type="FontFile" uid="uid://nsw8vx00xdp4" path="res://assets/interface/fonts/tinypixel.otf" id="1_8kstb"]
+[ext_resource type="FontFile" uid="uid://bktp1btvnvpeg" path="res://assets/interface/fonts/tinypixel.ttf" id="1_8kstb"]
 [ext_resource type="Script" uid="uid://qsvenq7b0iy3" path="res://interface/text_popup.gd" id="2_2fg3m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2fg3m"]
 font = ExtResource("1_8kstb")
+font_size = 12
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 shadow_color = Color(0, 0, 0, 0.6)

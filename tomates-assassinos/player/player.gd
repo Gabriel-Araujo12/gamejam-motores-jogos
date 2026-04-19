@@ -8,10 +8,15 @@ class_name Player
 signal health_changed(current_health: int, max_health: int)
 var _max_health: int
 var _current_weapon_index: int = 0
+var is_invincible: bool = false
 
 @export_category("Variables")
 @export var _health: int = 30
 @export var _move_speed: float = 256.0
+
+@export_category("Objects")
+@export var _invincibility_timer: Timer
+@export var _change_timer: Timer
 
 func _ready() -> void:
 	_max_health = _health
@@ -45,35 +50,43 @@ func _unhandled_input(event: InputEvent) -> void:
 		select_weapon(3)
 	elif event.is_action_pressed("weapon_5"):
 		select_weapon(4)
+	elif event.is_action_pressed("weapon_6"):
+		select_weapon(5)
 
 func select_weapon(index: int) -> void:
-	if index < 0 or index >= weapons_manager.get_child_count():
+	if index < 0 or index >= weapons_manager.get_child_count() or index == _current_weapon_index:
 		return
 	
 	_current_weapon_index = index
 	
 	for i in range(weapons_manager.get_child_count()):
 		var weapon = weapons_manager.get_child(i)
-		
 		weapon.visible = (i == index)
 		
 		for child in weapon.get_children():
 			if child is BaseWeapon:
-				child.visible = i == index
-				child.set_process(i == index)
-				child.set_physics_process(i == index)
-				
-				if i == index:
-					child.activate_all_logic()
-				else:
-					child.cancel_all_logic()
+				child.cancel_all_logic()
+	
+	_change_timer.start()
+	await _change_timer.timeout
+	
+	if index == _current_weapon_index:
+		var active_weapon = weapons_manager.get_child(_current_weapon_index)
+		for child in active_weapon.get_children():
+			if child is BaseWeapon:
+				child.activate_all_logic()
 
 func update_health(_type: String, _value: int) -> void:
 	match _type:
 		"damage":
+			if is_invincible:
+				return
+			
 			_health -= _value
 			sfx.play_playerhit()
 			animation.play("hit")
+			
+			start_invincibility()
 			
 			if _health <= 0:
 				global.wave_manager.call_deferred("clear_map", true)
@@ -89,3 +102,10 @@ func update_health(_type: String, _value: int) -> void:
 func reset_health() -> void:
 	_health = _max_health
 	health_changed.emit(_health, _max_health)
+
+func start_invincibility() -> void:
+	is_invincible = true;
+	_invincibility_timer.start()
+	
+	await _invincibility_timer.timeout
+	is_invincible = false

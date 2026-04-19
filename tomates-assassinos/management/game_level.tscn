@@ -13,9 +13,10 @@
 [node name="Player" parent="." unique_id=541100644 instance=ExtResource("2_fyo3i")]
 position = Vector2(573, 350)
 
-[node name="WaveManager" type="Node2D" parent="." unique_id=417954880 node_paths=PackedStringArray("_wave_spawner_timer", "_interface", "_player")]
+[node name="WaveManager" type="Node2D" parent="." unique_id=417954880 node_paths=PackedStringArray("_wave_spawner_timer", "_wave_start_timer", "_interface", "_player")]
 script = ExtResource("3_sktj0")
 _wave_spawner_timer = NodePath("WaveSpawnCooldown")
+_wave_start_timer = NodePath("WaveStartTimer")
 _interface = NodePath("../Interface")
 _player = NodePath("../Player")
 
@@ -56,6 +57,10 @@ position = Vector2(443, 361)
 position = Vector2(187, 359)
 
 [node name="WaveSpawnCooldown" type="Timer" parent="WaveManager" unique_id=1743738870]
+one_shot = true
+
+[node name="WaveStartTimer" type="Timer" parent="WaveManager" unique_id=906091501]
+wait_time = 5.0
 one_shot = true
 
 [node name="Interface" parent="." unique_id=752724292 node_paths=PackedStringArray("_wave_manager") instance=ExtResource("5_ocy5h")]

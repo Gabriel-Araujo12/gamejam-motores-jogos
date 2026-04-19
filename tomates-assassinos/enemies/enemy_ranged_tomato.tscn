@@ -198,7 +198,7 @@ radius = 9.0
 
 [node name="EnemyRangedTomato" unique_id=1854716505 instance=ExtResource("1_wo52u")]
 _enemy_type = "ranged"
-_move_speed = 150.0
+_move_speed = 145.0
 _health = 15
 _damage = 10
 

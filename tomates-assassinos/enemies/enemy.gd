@@ -117,7 +117,7 @@ func _boss(_direction: Vector2) -> void:
 	
 	else:
 		animated_sprite.play("run_fase3")
-		velocity = _direction * _move_speed
+		velocity = _direction * 180.0
 
 func update_health(_value: int) -> void:
 	if _is_spawning:

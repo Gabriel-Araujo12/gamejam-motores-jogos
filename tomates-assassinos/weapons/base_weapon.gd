@@ -3,6 +3,7 @@ class_name BaseWeapon
 
 const _PROJECTILE_REVOLVER: PackedScene = preload("res://weapons/ranged_weapons/projetil_revolver.tscn")
 const _PROJECTILE_ESCOPETA: PackedScene = preload("res://weapons/ranged_weapons/projetil_escopeta.tscn")
+const _PROJECTILE_THOMPSON: PackedScene = preload("res://weapons/ranged_weapons/projetil_thompson.tscn")
 
 @onready var sprite = $WeaponBody/WeaponTexture
 
@@ -89,6 +90,20 @@ func _spawn_projectile_escopeta() -> void:
 		
 		get_tree().root.call_deferred("add_child", _projectile_escopeta)
 		sfx.play_escopeta()
+
+func _spawn_projectile_thompson() -> void:
+	if not is_visible_in_tree(): 
+		return
+	
+	if is_instance_valid(_enemy_ref):
+		var _direction: Vector2 = global_position.direction_to(_enemy_ref.global_position)
+		var _projectile_thompson: ProjectileThompson = _PROJECTILE_THOMPSON.instantiate()
+		_projectile_thompson.global_position = global_position
+		_projectile_thompson.attack_damage = _attack_damage
+		_projectile_thompson.direction = _direction
+		
+		get_tree().root.call_deferred("add_child", _projectile_thompson)
+		sfx.play_thompson()
 
 func activate_all_logic() -> void:
 	if _detection_area:

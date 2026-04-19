@@ -32,7 +32,7 @@ radius = 224.0
 _attack_type = "ranged"
 _weapon_sfx_name = "revolver"
 _attack_damage = 25
-_attack_cooldown = 0.5
+_attack_cooldown = 1.0
 
 [node name="WeaponTexture" parent="WeaponBody" parent_id_path=PackedInt32Array(1291365077) index="0" unique_id=519575831]
 position = Vector2(26, 0)

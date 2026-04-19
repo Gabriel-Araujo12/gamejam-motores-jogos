@@ -211,7 +211,7 @@ radius = 7.0
 radius = 7.0
 
 [node name="EnemyFlyingTomato" unique_id=1854716505 instance=ExtResource("1_uyoot")]
-_move_speed = 180.0
+_move_speed = 175.0
 _health = 15
 _damage = 10
 
