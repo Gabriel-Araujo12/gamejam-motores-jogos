@@ -9,6 +9,8 @@
 font = ExtResource("2_rahlh")
 font_size = 72
 font_color = Color(0.81960785, 0.12156863, 0.14509805, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 shadow_size = 4
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(0, 4)

@@ -5,6 +5,17 @@
 [ext_resource type="Texture2D" uid="uid://ck13lyam466tv" path="res://assets/interface/button_2.png" id="2_k3r8v"]
 [ext_resource type="Texture2D" uid="uid://by05b24hdxrmc" path="res://assets/interface/button_3.png" id="4_rkgne"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3r8v"]
+texture = ExtResource("2_k3r8v")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8nmyp"]
 texture = ExtResource("2_k3r8v")
 texture_margin_left = 6.0
@@ -47,6 +58,7 @@ Button/colors/font_pressed_color = Color(0, 0, 0, 1)
 Button/constants/outline_size = 6
 Button/font_sizes/font_size = 36
 Button/fonts/font = ExtResource("1_4wckg")
+Button/styles/focus = SubResource("StyleBoxTexture_k3r8v")
 Button/styles/hover = SubResource("StyleBoxTexture_8nmyp")
 Button/styles/normal = SubResource("StyleBoxTexture_i5udr")
 Button/styles/pressed = SubResource("StyleBoxTexture_t3fue")

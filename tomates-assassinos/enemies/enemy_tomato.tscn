@@ -212,7 +212,7 @@ height = 28.0
 radius = 14.0
 height = 28.0
 
-[node name="EnemyTomato" unique_id=1854716505 instance=ExtResource("1_flald")]
+[node name="EnemyTomato" unique_id=1854716505 groups=["G_Enemy"] instance=ExtResource("1_flald")]
 _move_speed = 115.0
 _health = 20
 _damage = 15

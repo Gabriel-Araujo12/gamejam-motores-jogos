@@ -196,7 +196,7 @@ radius = 9.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_ygnqs"]
 radius = 9.0
 
-[node name="EnemyRangedTomato" unique_id=1854716505 instance=ExtResource("1_wo52u")]
+[node name="EnemyRangedTomato" unique_id=1854716505 groups=["G_Enemy"] instance=ExtResource("1_wo52u")]
 _enemy_type = "ranged"
 _move_speed = 145.0
 _health = 15

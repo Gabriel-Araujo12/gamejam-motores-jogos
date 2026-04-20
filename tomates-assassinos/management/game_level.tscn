@@ -183,6 +183,8 @@ tile_map_data = PackedByteArray("AAAKABUAAgAIAAAAAAALABUAAgAIAAAAAAAMABUAAgAIAAA
 tile_set = SubResource("TileSet_m20e0")
 
 [node name="WaterArea" type="Area2D" parent="Levels/1" unique_id=315806793]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/1/WaterArea" unique_id=1544336939]
 position = Vector2(816, 400)

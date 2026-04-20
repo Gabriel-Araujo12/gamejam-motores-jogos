@@ -9,6 +9,8 @@
 font = ExtResource("3_2upaq")
 font_size = 48
 font_color = Color(0.81960785, 0.12156863, 0.14509805, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 shadow_size = 4
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(0, 4)
@@ -17,6 +19,8 @@ shadow_offset = Vector2(0, 4)
 font = ExtResource("3_2upaq")
 font_size = 36
 font_color = Color(0.81960785, 0.12156863, 0.14509805, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 shadow_size = 4
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(0, 4)
@@ -42,7 +46,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.4)
+color = Color(0, 0, 0, 0.7882353)
 
 [node name="Title" type="Label" parent="." unique_id=1145555389]
 layout_mode = 1

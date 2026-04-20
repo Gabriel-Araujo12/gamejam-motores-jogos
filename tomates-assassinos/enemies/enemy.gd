@@ -32,9 +32,11 @@ var _player_ref: Player
 @export var _shoot_timer: Timer
 
 var dying: bool = false
+var _max_speed: float = 0
 
 func _ready():
 	animation.play("spawn")
+	_max_speed = _move_speed
 
 func _on_spawn_finished():
 	_is_spawning = false
@@ -119,6 +121,13 @@ func _boss(_direction: Vector2) -> void:
 		animated_sprite.play("run_fase3")
 		velocity = _direction * 180.0
 
+func update_speed(_value: int) -> void:
+	if _is_spawning:
+		return
+		
+	if _move_speed + _value <= _max_speed:	
+		_move_speed += _value
+		
 func update_health(_value: int) -> void:
 	if _is_spawning:
 		return
