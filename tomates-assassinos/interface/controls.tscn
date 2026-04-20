@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://crow5d5p13tip" path="res://interface/controls.gd" id="1_lodp2"]
 [ext_resource type="Texture2D" uid="uid://58ifxhcqea34" path="res://assets/interface/main_menu.png" id="2_epadu"]
 [ext_resource type="FontFile" uid="uid://bktp1btvnvpeg" path="res://assets/interface/fonts/tinypixel.ttf" id="3_2upaq"]
+[ext_resource type="Theme" uid="uid://c7ji0ntc1pv4j" path="res://assets/tema_test.tres" id="4_epadu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mdjxt"]
 font = ExtResource("3_2upaq")
@@ -19,21 +20,6 @@ font_color = Color(0.81960785, 0.12156863, 0.14509805, 1)
 shadow_size = 4
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(0, 4)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_krx4v"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mi4ox"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tb6pe"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_65j56"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bnwvy"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_lodp2"]
-font = ExtResource("3_2upaq")
-font_size = 36
-font_color = Color(0, 0, 0, 1)
 
 [node name="Controls" type="Control" unique_id=684173172]
 layout_mode = 3
@@ -114,26 +100,7 @@ offset_top = -72.0
 offset_right = 153.0
 offset_bottom = -32.0
 grow_vertical = 0
-theme_override_colors/font_color = Color(0.81960785, 0.12156863, 0.14509805, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.49019608, 0.15686275, 0.15686275, 1)
-theme_override_fonts/font = ExtResource("3_2upaq")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxEmpty_krx4v")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_mi4ox")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_tb6pe")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_65j56")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_bnwvy")
+theme = ExtResource("4_epadu")
 text = "Voltar"
-
-[node name="Shadow" type="Label" parent="Back" unique_id=254597040]
-show_behind_parent = true
-layout_mode = 0
-offset_top = 4.0
-offset_right = 121.0
-offset_bottom = 44.0
-text = "Voltar"
-label_settings = SubResource("LabelSettings_lodp2")
-vertical_alignment = 1
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
