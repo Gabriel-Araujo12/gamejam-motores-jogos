@@ -20,6 +20,7 @@ region_enabled = true
 region_rect = Rect2(32, 0, 32, 32)
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=199524227]
+visible = false
 position = Vector2(52, 0)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_mqonl")

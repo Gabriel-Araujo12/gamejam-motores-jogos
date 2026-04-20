@@ -83,12 +83,17 @@ func _spawn_projectile_escopeta() -> void:
 	
 	if is_instance_valid(_enemy_ref):
 		var _direction: Vector2 = global_position.direction_to(_enemy_ref.global_position)
-		var _projectile_escopeta: ProjectileEscopeta = _PROJECTILE_ESCOPETA.instantiate()
-		_projectile_escopeta.global_position = global_position
-		_projectile_escopeta.attack_damage = _attack_damage
-		_projectile_escopeta.direction = _direction
+		var spread_angle = deg_to_rad(15) 
+		var angles = [-spread_angle, 0, spread_angle]
 		
-		get_tree().root.call_deferred("add_child", _projectile_escopeta)
+		for angle in angles:
+			var _projectile_escopeta: ProjectileEscopeta = _PROJECTILE_ESCOPETA.instantiate()
+			_projectile_escopeta.global_position = global_position
+			_projectile_escopeta.attack_damage = _attack_damage
+			_projectile_escopeta.direction = _direction.rotated(angle)
+			
+			get_tree().root.call_deferred("add_child", _projectile_escopeta)
+		
 		sfx.play_escopeta()
 
 func _spawn_projectile_thompson() -> void:
