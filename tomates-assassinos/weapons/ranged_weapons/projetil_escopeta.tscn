@@ -5,6 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mqonl"]
 radius = 5.0
+height = 28.0
 
 [node name="ProjetilEscopeta" type="Area2D" unique_id=1875565368]
 collision_layer = 3
@@ -13,12 +14,14 @@ script = ExtResource("1_mqonl")
 _move_speed = 1024.0
 
 [node name="Texture" type="Sprite2D" parent="." unique_id=1470334131]
+position = Vector2(52, 0)
 texture = ExtResource("1_uey8v")
 region_enabled = true
 region_rect = Rect2(32, 0, 32, 32)
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=199524227]
 visible = false
+position = Vector2(52, 0)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_mqonl")
 

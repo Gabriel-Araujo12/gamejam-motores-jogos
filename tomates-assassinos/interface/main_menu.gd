@@ -3,6 +3,7 @@ class_name MainMenu
 
 func _ready() -> void:
 	bgm.play_menu()
+	$ButtonsContainer/Start.grab_focus()
 
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_file("res://interface/game_introduction.tscn")
