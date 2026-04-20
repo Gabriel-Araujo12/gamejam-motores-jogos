@@ -13,13 +13,13 @@ script = ExtResource("1_6lrfj")
 _move_speed = 1024.0
 
 [node name="Texture" type="Sprite2D" parent="." unique_id=660507742]
+position = Vector2(52, 0)
 texture = ExtResource("2_txekp")
 region_enabled = true
 region_rect = Rect2(32, 0, 32, 32)
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=316506295]
-visible = false
-position = Vector2(0, 0.5)
+position = Vector2(52, 0.5)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_0aht0")
 

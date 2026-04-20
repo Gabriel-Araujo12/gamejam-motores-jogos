@@ -171,7 +171,6 @@ editor_draw_drag_margin = true
 [node name="WeaponsManager" type="Node2D" parent="." unique_id=439646837]
 
 [node name="Weapon_1" type="Marker2D" parent="WeaponsManager" unique_id=2113246366]
-visible = false
 
 [node name="Faca" parent="WeaponsManager/Weapon_1" unique_id=908162557 instance=ExtResource("3_boad6")]
 

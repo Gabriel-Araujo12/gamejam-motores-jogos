@@ -32,7 +32,7 @@ radius = 224.0
 [node name="Thompson" unique_id=908162557 instance=ExtResource("1_brfin")]
 _attack_type = "ranged"
 _weapon_sfx_name = "thompson"
-_attack_damage = 8
+_attack_damage = 5
 _attack_cooldown = 0.2
 
 [node name="WeaponTexture" parent="WeaponBody" parent_id_path=PackedInt32Array(1291365077) index="0" unique_id=519575831]

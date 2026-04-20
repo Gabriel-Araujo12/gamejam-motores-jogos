@@ -60,7 +60,7 @@ position = Vector2(187, 359)
 one_shot = true
 
 [node name="WaveStartTimer" type="Timer" parent="WaveManager" unique_id=906091501]
-wait_time = 5.0
+wait_time = 3.0
 one_shot = true
 
 [node name="Interface" parent="." unique_id=752724292 node_paths=PackedStringArray("_wave_manager") instance=ExtResource("5_ocy5h")]

@@ -3,16 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://58ifxhcqea34" path="res://assets/interface/main_menu.png" id="1_dftu7"]
 [ext_resource type="Script" uid="uid://5i46becntsmr" path="res://interface/main_menu.gd" id="1_rahlh"]
 [ext_resource type="FontFile" uid="uid://bktp1btvnvpeg" path="res://assets/interface/fonts/tinypixel.ttf" id="2_rahlh"]
+[ext_resource type="Texture2D" uid="uid://talofu5eembr" path="res://assets/interface/logo.png" id="3_wwcsp"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_rahlh"]
-font = ExtResource("2_rahlh")
-font_size = 72
-font_color = Color(0.81960785, 0.12156863, 0.14509805, 1)
-shadow_size = 4
-shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(0, 4)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wwcsp"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rahlh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i5udr"]
 
@@ -26,6 +19,8 @@ shadow_offset = Vector2(0, 4)
 font = ExtResource("2_rahlh")
 font_size = 36
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wwcsp"]
 
 [node name="MainMenu" type="Control" unique_id=851358086]
 layout_mode = 3
@@ -41,22 +36,10 @@ position = Vector2(640, 360.00006)
 scale = Vector2(7.999999, 7.826088)
 texture = ExtResource("1_dftu7")
 
-[node name="Title" type="Label" parent="." unique_id=1768820693]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -433.0
-offset_top = 24.0
-offset_right = 433.0
-offset_bottom = 315.0
-grow_horizontal = 2
-text = "O Ataque
-Dos
-Tomates Assasinos"
-label_settings = SubResource("LabelSettings_rahlh")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Title" type="Sprite2D" parent="." unique_id=808198412]
+position = Vector2(652, 164)
+scale = Vector2(6, 6)
+texture = ExtResource("3_wwcsp")
 
 [node name="ButtonsContainer" type="VBoxContainer" parent="." unique_id=103547226]
 layout_mode = 1
@@ -72,11 +55,11 @@ grow_vertical = 0
 [node name="Start" type="Button" parent="ButtonsContainer" unique_id=1407577071]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.82, 0.12299998, 0.14623329, 1)
+theme_override_colors/font_focus_color = Color(0.49019608, 0.15686275, 0.15686275, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.49, 0.1568, 0.1568, 1)
 theme_override_fonts/font = ExtResource("2_rahlh")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxEmpty_wwcsp")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rahlh")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_i5udr")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_bjm56")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_i2iwl")
@@ -96,8 +79,8 @@ vertical_alignment = 1
 [node name="Controls" type="Button" parent="ButtonsContainer" unique_id=1715464732]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.82, 0.12299998, 0.14623329, 1)
+theme_override_colors/font_focus_color = Color(0.49019608, 0.15686275, 0.15686275, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.49, 0.1568, 0.1568, 1)
 theme_override_fonts/font = ExtResource("2_rahlh")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxEmpty_wwcsp")
@@ -121,8 +104,8 @@ vertical_alignment = 1
 [node name="Credits" type="Button" parent="ButtonsContainer" unique_id=2008905792]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.82, 0.12299998, 0.14623329, 1)
+theme_override_colors/font_focus_color = Color(0.49019608, 0.15686275, 0.15686275, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.49, 0.1568, 0.1568, 1)
 theme_override_fonts/font = ExtResource("2_rahlh")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxEmpty_wwcsp")
@@ -146,8 +129,8 @@ vertical_alignment = 1
 [node name="Quit" type="Button" parent="ButtonsContainer" unique_id=1044067630]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.82, 0.12299998, 0.14623329, 1)
+theme_override_colors/font_focus_color = Color(0.49019608, 0.15686275, 0.15686275, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.49, 0.1568, 0.1568, 1)
 theme_override_fonts/font = ExtResource("2_rahlh")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxEmpty_wwcsp")
