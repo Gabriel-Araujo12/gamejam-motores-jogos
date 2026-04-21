@@ -1,6 +1,9 @@
 extends Control
 class_name DeathMenu
 
+func _ready() -> void:
+	$ButtonsContainer/Retry.grab_focus()
+
 func _on_retry_pressed() -> void:
 	get_tree().change_scene_to_file("res://management/game_level.tscn")
 

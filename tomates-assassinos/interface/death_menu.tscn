@@ -2,23 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://58ifxhcqea34" path="res://assets/interface/main_menu.png" id="1_1h7en"]
 [ext_resource type="Script" uid="uid://8ht7bh1i4otb" path="res://interface/death_menu.gd" id="1_22e5q"]
-[ext_resource type="FontFile" uid="uid://bktp1btvnvpeg" path="res://assets/interface/fonts/tinypixel.ttf" id="2_22e5q"]
 [ext_resource type="Texture2D" uid="uid://che0hvq7v4mkm" path="res://assets/interface/final.png" id="3_0jlfa"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1h7en"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_22e5q"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0jlfa"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ig7qo"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qtcpf"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_1h7en"]
-font = ExtResource("2_22e5q")
-font_size = 36
-font_color = Color(0, 0, 0, 1)
+[ext_resource type="Theme" uid="uid://c7ji0ntc1pv4j" path="res://assets/tema_test.tres" id="4_0jlfa"]
 
 [node name="DeathMenu" type="Control" unique_id=1610289481]
 layout_mode = 3
@@ -59,54 +44,14 @@ theme_override_constants/separation = 192
 [node name="Retry" type="Button" parent="ButtonsContainer" unique_id=1727472097]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.81960785, 0.12156863, 0.14509805, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.49019608, 0.15686275, 0.15686275, 1)
-theme_override_fonts/font = ExtResource("2_22e5q")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxEmpty_1h7en")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_22e5q")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_0jlfa")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ig7qo")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_qtcpf")
+theme = ExtResource("4_0jlfa")
 text = "Tentar novamente"
-
-[node name="Shadow" type="Label" parent="ButtonsContainer/Retry" unique_id=1471283579]
-show_behind_parent = true
-layout_mode = 0
-offset_top = 4.0
-offset_right = 350.0
-offset_bottom = 44.0
-text = "Tentar novamente"
-label_settings = SubResource("LabelSettings_1h7en")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Menu" type="Button" parent="ButtonsContainer" unique_id=1414351607]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.81960785, 0.12156863, 0.14509805, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.49019608, 0.15686275, 0.15686275, 1)
-theme_override_fonts/font = ExtResource("2_22e5q")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxEmpty_1h7en")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_22e5q")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_0jlfa")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ig7qo")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_qtcpf")
+theme = ExtResource("4_0jlfa")
 text = "Retornar ao menu"
-
-[node name="Shadow" type="Label" parent="ButtonsContainer/Menu" unique_id=1645759462]
-show_behind_parent = true
-layout_mode = 0
-offset_top = 4.0
-offset_right = 350.0
-offset_bottom = 44.0
-text = "Retornar ao menu"
-label_settings = SubResource("LabelSettings_1h7en")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="pressed" from="ButtonsContainer/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="ButtonsContainer/Menu" to="." method="_on_menu_pressed"]

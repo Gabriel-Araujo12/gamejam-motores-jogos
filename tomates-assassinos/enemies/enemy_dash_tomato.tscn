@@ -271,7 +271,7 @@ radius = 12.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pwce1"]
 radius = 12.0
 
-[node name="EnemyDashTomato" unique_id=1854716505 instance=ExtResource("1_pxyqw")]
+[node name="EnemyDashTomato" unique_id=1854716505 groups=["G_Enemy"] instance=ExtResource("1_pxyqw")]
 _enemy_type = "chase_and_dash"
 _move_speed = 95.0
 _health = 35
