@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://dq536mmgakgwj" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://b0twvaonx36tb" path="res://assets/player/player.png" id="2_g1dw6"]
 [ext_resource type="PackedScene" uid="uid://bs0sp0ag2jgfr" path="res://weapons/meele_weapons/faca.tscn" id="3_boad6"]
+<<<<<<< HEAD
+=======
+[ext_resource type="PackedScene" uid="uid://cr815etm3w1t0" path="res://weapons/forcado.tscn" id="3_g1dw6"]
+>>>>>>> 5e9eaebffb50df9b7970aa03aa67409b99f56a1f
 [ext_resource type="PackedScene" uid="uid://d0e6gitsumddf" path="res://weapons/meele_weapons/foice.tscn" id="4_rgyib"]
 [ext_resource type="PackedScene" uid="uid://cr815etm3w1t0" path="res://weapons/meele_weapons/forcado.tscn" id="5_rgyib"]
 [ext_resource type="PackedScene" uid="uid://64ic7rkhgshd" path="res://weapons/ranged_weapons/revolver.tscn" id="6_hg6s5"]

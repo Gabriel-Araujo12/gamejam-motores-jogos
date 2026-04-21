@@ -19,7 +19,10 @@ region_enabled = true
 region_rect = Rect2(32, 0, 32, 32)
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=780911675]
+<<<<<<< HEAD
 visible = false
+=======
+>>>>>>> 5e9eaebffb50df9b7970aa03aa67409b99f56a1f
 position = Vector2(53, 0)
 shape = SubResource("CircleShape2D_ak6pe")
 

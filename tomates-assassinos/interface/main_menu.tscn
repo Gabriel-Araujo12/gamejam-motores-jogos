@@ -2,9 +2,25 @@
 
 [ext_resource type="Texture2D" uid="uid://58ifxhcqea34" path="res://assets/interface/main_menu.png" id="1_dftu7"]
 [ext_resource type="Script" uid="uid://5i46becntsmr" path="res://interface/main_menu.gd" id="1_rahlh"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://talofu5eembr" path="res://assets/interface/logo.png" id="3_wwcsp"]
 [ext_resource type="Theme" uid="uid://c7ji0ntc1pv4j" path="res://assets/tema_test.tres" id="4_wwcsp"]
 
+=======
+[ext_resource type="FontFile" uid="uid://bktp1btvnvpeg" path="res://assets/interface/fonts/tinypixel.ttf" id="2_rahlh"]
+[ext_resource type="Theme" uid="uid://c7ji0ntc1pv4j" path="res://assets/tema_test.tres" id="4_wwcsp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rahlh"]
+font = ExtResource("2_rahlh")
+font_size = 72
+font_color = Color(0.81960785, 0.12156863, 0.14509805, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 4)
+
+>>>>>>> 5e9eaebffb50df9b7970aa03aa67409b99f56a1f
 [node name="MainMenu" type="Control" unique_id=851358086]
 layout_mode = 3
 anchors_preset = 15
