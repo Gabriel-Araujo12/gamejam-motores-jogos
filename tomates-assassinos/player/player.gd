@@ -7,6 +7,7 @@ class_name Player
 
 signal health_changed(current_health: int, max_health: int)
 var _max_health: int
+var _max_speed: float = 0
 var _current_weapon_index: int = 0
 var is_invincible: bool = false
 
@@ -20,6 +21,7 @@ var is_invincible: bool = false
 
 func _ready() -> void:
 	_max_health = _health
+	_max_speed = _move_speed
 	global.player = self
 	select_weapon(0)
 	health_changed.emit(_health, _max_health)
@@ -98,6 +100,13 @@ func update_health(_type: String, _value: int) -> void:
 				_health = _max_health
 	
 	health_changed.emit(_health, _max_health)
+	
+func update_speed(_value: int) -> void:
+	if _move_speed + _value <= _max_speed:
+		_move_speed += _value
+	
+func reset_speed() -> void:
+	_move_speed = _max_speed
 
 func reset_health() -> void:
 	_health = _max_health

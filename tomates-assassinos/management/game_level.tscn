@@ -481,6 +481,7 @@ tile_set = SubResource("TileSet_m20e0")
 [node name="DamageArea" type="Area2D" parent="Levels/5" unique_id=1878337127]
 collision_layer = 3
 collision_mask = 3
+script = ExtResource("10_hc7hr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Levels/5/DamageArea" unique_id=1338887825]
 position = Vector2(576.5, 208.25)
