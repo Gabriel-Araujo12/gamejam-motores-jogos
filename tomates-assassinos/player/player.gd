@@ -52,6 +52,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		select_weapon(4)
 	elif event.is_action_pressed("weapon_6"):
 		select_weapon(5)
+	elif event.is_action_pressed("weapon_0"):
+		select_weapon(6)
 
 func select_weapon(index: int) -> void:
 	if index < 0 or index >= weapons_manager.get_child_count() or index == _current_weapon_index:

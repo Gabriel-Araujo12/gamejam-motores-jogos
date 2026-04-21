@@ -86,6 +86,8 @@ func start_new_wave() -> void:
 	_player.reset_health()
 	_interface.update_wave(_current_wave)
 	
+	owner._change_level(_current_wave)
+	
 	if _current_wave < 7:
 		bgm.play_game()
 	else:

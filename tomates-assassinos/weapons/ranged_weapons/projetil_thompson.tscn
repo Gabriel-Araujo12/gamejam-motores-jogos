@@ -13,12 +13,14 @@ script = ExtResource("1_grblv")
 _move_speed = 1024.0
 
 [node name="Texture" type="Sprite2D" parent="." unique_id=1089946825]
+position = Vector2(53, 0)
 texture = ExtResource("1_ak6pe")
 region_enabled = true
 region_rect = Rect2(32, 0, 32, 32)
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=780911675]
 visible = false
+position = Vector2(53, 0)
 shape = SubResource("CircleShape2D_ak6pe")
 
 [connection signal="body_entered" from="." to="." method="_on_attack_area_body_entered"]

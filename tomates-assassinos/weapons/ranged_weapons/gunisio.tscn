@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://ch0ea1oxc3kjr"]
+
+[ext_resource type="PackedScene" uid="uid://bx4fe8qjgyie0" path="res://weapons/weapon_template.tscn" id="1_4pv0t"]
+[ext_resource type="Texture2D" uid="uid://cvfrpho8apbp2" path="res://assets/weapons/GUNisio_idle.png" id="2_vhmb4"]
+[ext_resource type="Texture2D" uid="uid://bev1okshbl4fb" path="res://assets/weapons/GUNisio_shooting.png" id="3_vhmb4"]
+
+[sub_resource type="Animation" id="Animation_wee12"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WeaponBody/WeaponTexture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_vhmb4")]
+}
+
+[sub_resource type="Animation" id="Animation_gl7ue"]
+resource_name = "attack"
+length = 0.3
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_spawn_projectile_gunisio"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WeaponBody/WeaponTexture:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_vhmb4"), ExtResource("2_vhmb4")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rftqp"]
+_data = {
+&"RESET": SubResource("Animation_wee12"),
+&"attack": SubResource("Animation_gl7ue")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wee12"]
+radius = 210.0
+
+[node name="Gunisio" unique_id=908162557 instance=ExtResource("1_4pv0t")]
+_attack_type = "ranged"
+_weapon_sfx_name = "gunisio"
+_attack_damage = 300
+_attack_cooldown = 0.2
+
+[node name="WeaponTexture" parent="WeaponBody" parent_id_path=PackedInt32Array(1291365077) index="0" unique_id=519575831]
+position = Vector2(23.749998, 0.62499434)
+scale = Vector2(0.050961535, 0.04759617)
+texture = ExtResource("2_vhmb4")
+region_enabled = false
+
+[node name="Animation" parent="." index="1" unique_id=1821914207]
+libraries/ = SubResource("AnimationLibrary_rftqp")
+
+[node name="Collision" type="CollisionShape2D" parent="DetectionArea" parent_id_path=PackedInt32Array(51058909) index="0" unique_id=486284846]
+visible = false
+shape = SubResource("CircleShape2D_wee12")

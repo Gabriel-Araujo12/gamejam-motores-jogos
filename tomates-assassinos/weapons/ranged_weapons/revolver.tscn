@@ -26,7 +26,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1f67c"]
-radius = 224.0
+radius = 210.0
 
 [node name="Revolver" unique_id=908162557 instance=ExtResource("1_jfilu")]
 _attack_type = "ranged"

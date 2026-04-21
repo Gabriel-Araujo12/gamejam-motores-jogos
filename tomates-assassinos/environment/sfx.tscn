@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://b71cwjtgnro3n" path="res://assets/musics/sfx/hit_player.ogg" id="6_gm3yy"]
 [ext_resource type="AudioStream" uid="uid://b0m6y5g2hshh" path="res://assets/musics/sfx/thompson.ogg" id="7_d7qr1"]
 [ext_resource type="AudioStream" uid="uid://bdes61mmsy828" path="res://assets/musics/sfx/tomato_death.ogg" id="7_nyq10"]
+[ext_resource type="AudioStream" uid="uid://743ohwwd1eqj" path="res://assets/musics/sfx/gunisio.ogg" id="8_8rd1x"]
 
 [node name="SFX" type="Node2D" unique_id=505384598]
 script = ExtResource("1_gq7ky")
@@ -35,6 +36,10 @@ volume_db = -16.0
 [node name="Thompson" type="AudioStreamPlayer" parent="." unique_id=2051719572]
 stream = ExtResource("7_d7qr1")
 volume_db = -16.0
+
+[node name="Gunisio" type="AudioStreamPlayer" parent="." unique_id=1136063946]
+stream = ExtResource("8_8rd1x")
+volume_db = 15.0
 
 [node name="PlayerHit" type="AudioStreamPlayer" parent="." unique_id=177950554]
 stream = ExtResource("6_gm3yy")

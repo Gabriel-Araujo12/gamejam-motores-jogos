@@ -26,7 +26,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0585e"]
-radius = 148.0
+radius = 140.0
 
 [node name="Escopeta" unique_id=908162557 instance=ExtResource("1_xr6a4")]
 _attack_type = "ranged"

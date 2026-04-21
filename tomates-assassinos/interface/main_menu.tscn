@@ -2,30 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://58ifxhcqea34" path="res://assets/interface/main_menu.png" id="1_dftu7"]
 [ext_resource type="Script" uid="uid://5i46becntsmr" path="res://interface/main_menu.gd" id="1_rahlh"]
-[ext_resource type="FontFile" uid="uid://bktp1btvnvpeg" path="res://assets/interface/fonts/tinypixel.ttf" id="2_rahlh"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_rahlh"]
-font = ExtResource("2_rahlh")
-font_size = 72
-font_color = Color(0.81960785, 0.12156863, 0.14509805, 1)
-shadow_size = 4
-shadow_color = Color(0, 0, 0, 1)
-shadow_offset = Vector2(0, 4)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wwcsp"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i5udr"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bjm56"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i2iwl"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sra6w"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_dftu7"]
-font = ExtResource("2_rahlh")
-font_size = 36
-font_color = Color(0, 0, 0, 1)
+[ext_resource type="Texture2D" uid="uid://talofu5eembr" path="res://assets/interface/logo.png" id="3_wwcsp"]
+[ext_resource type="Theme" uid="uid://c7ji0ntc1pv4j" path="res://assets/tema_test.tres" id="4_wwcsp"]
 
 [node name="MainMenu" type="Control" unique_id=851358086]
 layout_mode = 3
@@ -41,132 +19,48 @@ position = Vector2(640, 360.00006)
 scale = Vector2(7.999999, 7.826088)
 texture = ExtResource("1_dftu7")
 
-[node name="Title" type="Label" parent="." unique_id=1768820693]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -433.0
-offset_top = 24.0
-offset_right = 433.0
-offset_bottom = 315.0
-grow_horizontal = 2
-text = "O Ataque
-Dos
-Tomates Assasinos"
-label_settings = SubResource("LabelSettings_rahlh")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Title" type="Sprite2D" parent="." unique_id=303154406]
+position = Vector2(641, 176)
+scale = Vector2(6, 6)
+texture = ExtResource("3_wwcsp")
 
 [node name="ButtonsContainer" type="VBoxContainer" parent="." unique_id=103547226]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 32.0
-offset_top = -240.0
-offset_right = 270.0
-offset_bottom = -112.0
-grow_vertical = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.0
+offset_top = 46.75
+offset_right = 169.0
+offset_bottom = 330.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
 
 [node name="Start" type="Button" parent="ButtonsContainer" unique_id=1407577071]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.82, 0.12299998, 0.14623329, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.49, 0.1568, 0.1568, 1)
-theme_override_fonts/font = ExtResource("2_rahlh")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxEmpty_wwcsp")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_i5udr")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_bjm56")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_i2iwl")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_sra6w")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("4_wwcsp")
 text = "Iniciar Jogo"
-
-[node name="Shadow" type="Label" parent="ButtonsContainer/Start" unique_id=85980887]
-show_behind_parent = true
-layout_mode = 0
-offset_top = 3.0
-offset_right = 338.0
-offset_bottom = 43.0
-text = "Iniciar Jogo"
-label_settings = SubResource("LabelSettings_dftu7")
-vertical_alignment = 1
 
 [node name="Controls" type="Button" parent="ButtonsContainer" unique_id=1715464732]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.82, 0.12299998, 0.14623329, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.49, 0.1568, 0.1568, 1)
-theme_override_fonts/font = ExtResource("2_rahlh")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxEmpty_wwcsp")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_i5udr")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_bjm56")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_i2iwl")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_sra6w")
+theme = ExtResource("4_wwcsp")
 text = "Controles"
-alignment = 0
-
-[node name="Shadow" type="Label" parent="ButtonsContainer/Controls" unique_id=1079878898]
-show_behind_parent = true
-layout_mode = 0
-offset_top = 3.0
-offset_right = 270.0
-offset_bottom = 43.0
-text = "Controles"
-label_settings = SubResource("LabelSettings_dftu7")
-vertical_alignment = 1
 
 [node name="Credits" type="Button" parent="ButtonsContainer" unique_id=2008905792]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.82, 0.12299998, 0.14623329, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.49, 0.1568, 0.1568, 1)
-theme_override_fonts/font = ExtResource("2_rahlh")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxEmpty_wwcsp")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_i5udr")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_bjm56")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_i2iwl")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_sra6w")
+theme = ExtResource("4_wwcsp")
 text = "Creditos"
-alignment = 0
-
-[node name="Shadow" type="Label" parent="ButtonsContainer/Credits" unique_id=179306652]
-show_behind_parent = true
-layout_mode = 0
-offset_top = 3.0
-offset_right = 239.0
-offset_bottom = 43.0
-text = "Creditos"
-label_settings = SubResource("LabelSettings_dftu7")
-vertical_alignment = 1
 
 [node name="Quit" type="Button" parent="ButtonsContainer" unique_id=1044067630]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.82, 0.12299998, 0.14623329, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.49, 0.1568, 0.1568, 1)
-theme_override_fonts/font = ExtResource("2_rahlh")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxEmpty_wwcsp")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_i5udr")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_bjm56")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_i2iwl")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_sra6w")
+theme = ExtResource("4_wwcsp")
 text = "Sair"
-alignment = 0
-
-[node name="Shadow" type="Label" parent="ButtonsContainer/Quit" unique_id=656311565]
-show_behind_parent = true
-layout_mode = 0
-offset_top = 3.0
-offset_right = 231.0
-offset_bottom = 43.0
-text = "Sair"
-label_settings = SubResource("LabelSettings_dftu7")
-vertical_alignment = 1
 
 [connection signal="pressed" from="ButtonsContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="ButtonsContainer/Controls" to="." method="_on_controls_pressed"]

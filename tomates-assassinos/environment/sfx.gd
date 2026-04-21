@@ -8,6 +8,7 @@ var current_music = ""
 @onready var revolver_sound = $Revolver
 @onready var escopeta_sound = $Escopeta
 @onready var thompson_sound = $Thompson
+@onready var gunisio_sound = $Gunisio
 @onready var playerhit_sound = $PlayerHit
 @onready var tomatodeath_sound = $TomatoDeath
 
@@ -28,6 +29,9 @@ func play_escopeta():
 
 func play_thompson():
 	thompson_sound.play()
+
+func play_gunisio():
+	gunisio_sound.play()
 
 func play_playerhit():
 	playerhit_sound.play()

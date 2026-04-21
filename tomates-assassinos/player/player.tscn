@@ -3,11 +3,12 @@
 [ext_resource type="Script" uid="uid://dq536mmgakgwj" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://b0twvaonx36tb" path="res://assets/player/player.png" id="2_g1dw6"]
 [ext_resource type="PackedScene" uid="uid://bs0sp0ag2jgfr" path="res://weapons/meele_weapons/faca.tscn" id="3_boad6"]
-[ext_resource type="PackedScene" uid="uid://cr815etm3w1t0" path="res://weapons/meele_weapons/forcado.tscn" id="3_g1dw6"]
 [ext_resource type="PackedScene" uid="uid://d0e6gitsumddf" path="res://weapons/meele_weapons/foice.tscn" id="4_rgyib"]
+[ext_resource type="PackedScene" uid="uid://cr815etm3w1t0" path="res://weapons/meele_weapons/forcado.tscn" id="5_rgyib"]
 [ext_resource type="PackedScene" uid="uid://64ic7rkhgshd" path="res://weapons/ranged_weapons/revolver.tscn" id="6_hg6s5"]
 [ext_resource type="PackedScene" uid="uid://bxyb2qgp283hw" path="res://weapons/ranged_weapons/escopeta.tscn" id="7_8t03j"]
 [ext_resource type="PackedScene" uid="uid://bufw23g05yps8" path="res://weapons/ranged_weapons/thompson.tscn" id="8_rgyib"]
+[ext_resource type="PackedScene" uid="uid://ch0ea1oxc3kjr" path="res://weapons/ranged_weapons/gunisio.tscn" id="9_hg6s5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yw30f"]
 atlas = ExtResource("2_g1dw6")
@@ -143,7 +144,7 @@ _data = {
 radius = 2.4315224
 height = 14.690618
 
-[node name="Player" type="CharacterBody2D" unique_id=541100644 node_paths=PackedStringArray("_invincibility_timer", "_change_timer")]
+[node name="Player" type="CharacterBody2D" unique_id=541100644 node_paths=PackedStringArray("_invincibility_timer", "_change_timer") groups=["Player"]]
 script = ExtResource("1_rkbax")
 _health = 100
 _move_speed = 195.0
@@ -171,7 +172,6 @@ editor_draw_drag_margin = true
 [node name="WeaponsManager" type="Node2D" parent="." unique_id=439646837]
 
 [node name="Weapon_1" type="Marker2D" parent="WeaponsManager" unique_id=2113246366]
-visible = false
 
 [node name="Faca" parent="WeaponsManager/Weapon_1" unique_id=908162557 instance=ExtResource("3_boad6")]
 
@@ -183,12 +183,12 @@ visible = false
 [node name="Weapon_3" type="Marker2D" parent="WeaponsManager" unique_id=1717589244]
 visible = false
 
-[node name="Forcado" parent="WeaponsManager/Weapon_3" unique_id=95392348 instance=ExtResource("3_g1dw6")]
+[node name="Forcado" parent="WeaponsManager/Weapon_3" unique_id=64307653 instance=ExtResource("5_rgyib")]
 
 [node name="Weapon_4" type="Marker2D" parent="WeaponsManager" unique_id=815228139]
 visible = false
 
-[node name="Revolver" parent="WeaponsManager/Weapon_4" unique_id=329803612 instance=ExtResource("6_hg6s5")]
+[node name="Revolver" parent="WeaponsManager/Weapon_4" unique_id=457915742 instance=ExtResource("6_hg6s5")]
 
 [node name="Weapon_5" type="Marker2D" parent="WeaponsManager" unique_id=196988473]
 visible = false
@@ -199,6 +199,11 @@ visible = false
 visible = false
 
 [node name="Thompson" parent="WeaponsManager/Weapon_6" unique_id=604605774 instance=ExtResource("8_rgyib")]
+
+[node name="Weapon_0" type="Marker2D" parent="WeaponsManager" unique_id=994611705]
+visible = false
+
+[node name="Gunisio" parent="WeaponsManager/Weapon_0" unique_id=1490839067 instance=ExtResource("9_hg6s5")]
 
 [node name="InvincibilityTimer" type="Timer" parent="." unique_id=2051946122]
 wait_time = 1.5

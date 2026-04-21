@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://hsm3gununtx3"]
+
+[ext_resource type="Texture2D" uid="uid://fnla1w3df5mh" path="res://assets/weapons/GUNisio_projectile.png" id="1_sa1au"]
+[ext_resource type="Script" uid="uid://bvxyosiljqi4e" path="res://weapons/ranged_weapons/projetil_gunisio.gd" id="1_t2rqm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t2rqm"]
+radius = 4.0
+height = 24.0
+
+[node name="ProjetilGunisio" type="Area2D" unique_id=862868599]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_t2rqm")
+_move_speed = 1024.0
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=986013630]
+position = Vector2(43.000004, 5)
+scale = Vector2(0.049038455, 0.04735577)
+texture = ExtResource("1_sa1au")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=2090837888]
+position = Vector2(43, 5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_t2rqm")
+
+[connection signal="body_entered" from="." to="." method="_on_attack_area_body_entered"]
